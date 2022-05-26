@@ -1,0 +1,14 @@
+<div class="card" style="width: 15rem">
+    <img class="card-img-top" src="{{prod.img_url_1}}" alt="{{ prod.nombre }}">
+    <div class="card-body">
+        <h5 class="card-title">{{prod.nombre}}</h5>
+        <h6 class="card-subtitle">{{prod.precio | currency:'USD': true}}</h6>
+
+    </div>
+    <div class="card-footer">
+        
+        <button 
+                (click)="addToCart(prod.producto_id)"                
+                class="btn btn-success btn-block">Añadir al carrito</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+
+<div class="container-fluid tabla">
+    <h1>Ingresos</h1>
+    <table class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Categoria</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Controles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ingreso of ingresos">
+                <td>{{ingreso.ingreso_id}}</td>
+                <td>{{ingreso.producto_id.nombre}}</td>
+                <td>{{ingreso.producto_id.marca}}</td>
+                <td>{{ingreso.producto_id.tipo.nombre}}</td>
+                <td>{{ingreso.cantidad}}</td>
+                <td>{{ingreso.fecha}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="delIngreso(ingreso.ingreso_id)">X</button>
+                    <button class="btn btn-warning"
+                            (click)="edit(ingreso.ingreso_id)">
+                        Edit
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,101 @@
+<div class="container-fluid"*ngIf="cargado">
+    <h4 style="text-align: center;">Añadir al carrito</h4>
+    <div class="row addRow">
+        
+        <div class="col-sm-2 add-col">
+            <h5>{{prodXAgregar.nombre}}</h5>
+            <p>{{prodXAgregar.tipo.nombre}}</p>
+        </div>
+        <div class="col-sm-2">
+            <img src="{{prodXAgregar.img_url_1}}" alt="" style="width: 100px;">
+        </div>
+        <div class="col-sm-2 add-col">
+            <p>Precio: ${{prodXAgregar.precio}}</p>
+        </div>
+        <div class="col-sm-3 add-col">
+            <form   [formGroup]="carrito"
+                    class="addToCart"  
+                    (ngSubmit)="crearCarrito(prodXAgregar.producto_id)">
+
+                <label class="addP">Cantidad:</label>
+                 <input type="number"                              
+                        formControlName="cantidad"
+                        placeholder="Elija" 
+                        style="width: 60px"
+                        class="addI">
+                 <button class="btn btn-success addB">Confirmar</button>
+            </form>
+            
+        </div>
+    
+      
+    
+        <div class="col-sm-1 add-col">
+            <button class="btn btn-danger" (click)="borrarDelStorage()">Descartar</button>
+        </div>
+    
+    </div>
+</div>
+    
+
+<div class="container-fluid" *ngIf="this.carritos != 0">
+    <h3 style="text-align: center;">Carrito:</h3>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Producto</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Editar/Borrar</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <tr *ngFor="let cart of carritos">
+                <td>{{cart.cart_id}}</td>
+                <td>{{cart.producto.nombre}} <p>{{cart.producto.tipo.nombre}}</p></td>
+                <td><img src="{{cart.producto.img_url_1}}" alt="imagen del producto" style="width: 50px; height: 40px"></td>
+                <td>${{cart.producto.precio}}</td>
+                <td>
+                    <p *ngIf="!cart.cant_edit">{{cart.cantidad}}</p>
+                    <form *ngIf="cart.cant_edit" [formGroup]="carrito" (ngSubmit)="editarCarrito(cart.cart_id)">
+                        <input type="number" style="width: 50px;" placeholder="{{cart.cantidad}}" formControlName="cantidad">
+                        <button class="btn btn-success">OK</button>
+                    </form>
+                    
+                    
+                </td>
+                <td>${{cart.total_gastado}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="delCart(cart.cart_id)">X</button>
+                        <button class="btn btn-warning"
+                                (click)="edit(cart.cart_id)">
+                            Edit
+                        </button>
+                        
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="total">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <h3>Total: </h3>
+                </td>
+                <td>
+                    <h4><em>${{calcularTotal()}}</em></h4>               
+                </td>
+                <td>
+                    <button class="btn btn-success" (click)="siguiente()">Siguiente</button>
+                </td>
+            </tr>
+        </tfoot>
+        
+    </table>
+</div>
+

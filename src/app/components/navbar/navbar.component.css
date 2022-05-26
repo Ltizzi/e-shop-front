@@ -1,0 +1,16 @@
+.nav-ul{
+    margin-right: 4rem;
+}
+
+.dropdown{
+    margin-left: 5rem;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+/* .busca {
+    display: inline-flex;
+
+} */

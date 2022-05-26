@@ -1,0 +1,15 @@
+<div class="sticky-top">
+    <div class="list-group">
+        <a  
+            class="list-group-item list-group-item-action"
+            [class.active]="!categoria"
+            routerLink="/productos">Todas las categorías</a>
+        <a 
+            *ngFor="let cat of categorias"
+            routerLink="/productos"
+            [queryParams]="{categoria: cat.nombre}"
+            class="list-group-item list-group-item-action"
+            [class.active]="categoria === cat.nombre">
+            {{cat.nombre}}</a>
+    </div>
+</div>

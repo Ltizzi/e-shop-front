@@ -1,0 +1,35 @@
+<h1>Ventas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Productos</th>
+            <th>Monto</th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Control</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let venta of ventas">
+            <td>{{venta.compra_id}}</td>
+            <td>
+                <ul>
+                    <li *ngFor="let item of venta.items">{{item.producto.nombre}}</li>
+                </ul>
+            </td>
+            <td>{{venta.monto}}</td>
+            <td>
+                <ul>
+                    <li>{{venta.user.user_id}}</li>
+                    <li>{{venta.user.nombre}} {{venta.user.apellido}}</li>
+                    <li>{{venta.user.usuario}}</li>
+                    <li>{{venta.user.email}}</li>
+                </ul>
+                
+            </td>
+            <td>{{venta.fecha}}</td>
+        </tr>
+    </tbody>
+</table>

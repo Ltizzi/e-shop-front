@@ -1,0 +1,34 @@
+<h3 style="text-align: center;">Compra</h3>
+<h4>Lista de Productos:</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Total a pagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let order of orders">
+      <tr *ngIf="order.estado.estado_id == 1">
+        <td>{{order.producto.nombre}}</td>
+        <td>{{order.cantidad}}</td>
+        <td>{{order.total_gastado}}</td>
+      </tr>
+    </ng-container>
+    
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <th>Total: ${{calcularTotal()}}</th>
+    </tr>
+  </tfoot>
+</table>
+
+<div>
+  <h6>Método de pago</h6>
+  <p>Los pagos se efectuan a través de Mercado Pago, presione el siguiente botón para continuar el pago en su sitio</p>
+  <button class="btn btn-success" (click)="siguiente()">Continuar a Mercado Pago</button>
+</div>

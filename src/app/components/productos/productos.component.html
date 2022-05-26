@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-categorias [categoria]="categoria"></app-categorias>
+        </div>
+
+        <div class="col-9">
+            <div class="row catalogo">
+                <ng-container *ngFor="let prod of prodFiltrados; let i= index">
+                    <div class="col">
+                      <app-product-card [prod]="prod" [show-actions]="false"></app-product-card>
+                    </div>
+                    <div *ngIf="(i+1)%3 ===0" class="w-100"></div>    
+                </ng-container>
+                
+            </div>
+        </div>
+    </div>
+   
+</div>
+
