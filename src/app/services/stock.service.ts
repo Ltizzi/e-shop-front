@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from './data.service';
 import { Injectable } from '@angular/core';
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class StockService extends DataService {
 
-  constructor(http: HttpClient) {
-    super("http://localhost:8080/stock", http);
+  constructor(http: HttpClient, authServ: AuthService) {
+    super("http://localhost:8080/stock", http, authServ);
    }
 }

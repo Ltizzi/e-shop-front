@@ -1,3 +1,5 @@
+import { AuthService } from './../../services/auth.service';
+import { UsuarioService } from './../../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  user:any;
+  load:boolean = false;
+
+  constructor(private userServ: UsuarioService, private authServ: AuthService) { }
 
   ngOnInit(): void {
+   if (this.authServ.isLoggedIn()) {
+      this.userServ.getByUsuario((this.authServ.currentUser).sub)
+                      .subscribe(data => {
+                            this.user = data;
+                            this.load = true;
+                            });
+   }
   }
 
 }

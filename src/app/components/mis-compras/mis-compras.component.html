@@ -1,1 +1,23 @@
-<p>mis-compras works!</p>
+<h1>Mis compras</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Items</th>
+            <th>Monto</th>
+            <th>Fecha</th>
+        </tr>
+        <tr *ngFor="let compra of compras">
+            <th>{{compra.compra_id}}</th>
+            <th>
+                <ul>
+                    <li *ngFor="let item of compra.items">
+                        Producto: {{item.producto.nombre}}, precio: {{item.producto.precio}}
+                    </li>
+                </ul>
+            </th>
+            <th>{{compra.monto}}</th>
+            <th>{{compra.fecha}}</th>
+        </tr>
+    </thead>
+</table>

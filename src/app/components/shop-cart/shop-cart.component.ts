@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { ProductoService } from './../../services/producto.service';
 import { DatosService } from './../../services/datos.service';
@@ -36,6 +37,7 @@ export class ShopCartComponent implements OnInit {
               private datoServ: DatosService,
               private prodServ: ProductoService,
               private orderServ: ShopOrderService,
+              private authServ: AuthService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -52,7 +54,7 @@ export class ShopCartComponent implements OnInit {
     else if ((localStorage.getItem("pxa_temp" )&& (this.prod_id == 0))) {
       this.prodXAgregar = localStorage.getItem("pxa_temp");
     }
-    this.cartServ.getAll().subscribe( data => {
+    this.cartServ.getByUsuario((this.authServ.currentUser).sub).subscribe( data => {
                   this.carritos = data;
                   for(let cart of this.carritos) {
                     cart.cant_edit = false;
@@ -154,9 +156,11 @@ export class ShopCartComponent implements OnInit {
   siguiente(){
     for (let carrito of this.carritos) {
       console.log("EL carrito que se subirá es: " + carrito);
-      this.orderServ.create(carrito).subscribe(() => console.log("Carga de carrito " + carrito.cart_id + " realizada..."))
+      this.orderServ.create(carrito).subscribe(() => 
+                console.log("Carga de carrito " + carrito.cart_id + " realizada..."))
     }
-
-    this.router.navigate(['/check-out']);
+    this.cartServ.getAll().subscribe(() => 
+                      this.router.navigate(['/check-out']));
+    
   }
 }

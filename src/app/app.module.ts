@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { ShopOrderService } from './services/shop-order.service';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import { DataTablesModule } from 'angular-datatables';
@@ -44,6 +45,8 @@ import { AppErrorHandler } from './commons/app-error-handler';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
+import { SiginComponent } from './components/sigin/sigin.component';
 
 
 @NgModule({
@@ -72,7 +75,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     EditCategoryComponent,
     NewEntradaComponent,
     EditEntradaComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    SiginComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +95,10 @@ import { ProductCardComponent } from './components/product-card/product-card.com
         ProductoService,
         StockService,
         UsuarioService,
-        ShopOrderService
+        ShopOrderService,
+        { provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
+        JwtHelperService,
+        AuthService
   
   ],
   bootstrap: [AppComponent]

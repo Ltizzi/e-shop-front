@@ -1,3 +1,4 @@
+import { SiginComponent } from './components/sigin/sigin.component';
 import { EditEntradaComponent } from './admin/forms/edit-entrada/edit-entrada.component';
 import { EditCategoryComponent } from './admin/forms/edit-category/edit-category.component';
 import { EditProductComponent } from './admin/forms/edit-product/edit-product.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'check-out', component: CheckOutComponent },
     { path: 'order-success', component: OrderSucessComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'signin', component: SiginComponent },
     { path: 'profile', component: ProfileComponent },
     { path: 'mis-compras', component: MisComprasComponent},
     { path: 'not-found', component: NotFoundComponent },

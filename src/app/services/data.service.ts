@@ -1,5 +1,6 @@
+import { AuthService } from './auth.service';
 import { Inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs';
 import { throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,13 +13,24 @@ import { NotFoundError } from '../commons/not-found-error';
 })
 export class DataService {
 
-  constructor(@Inject(String) private url:string, private http: HttpClient) { }
+  constructor(@Inject(String) private url:string, 
+                              private http: HttpClient,
+                              private authServ: AuthService) { }
   
+  token = this.authServ.token;
+  header = new HttpHeaders({
+    'Authorizaation': 'Bearer ' + this.token,
+    'Content-type': "application/json"
+  });
 
   getAll() {
     return this.http.get(this.url + '/ver')
             .pipe(map(response => response),
                 catchError(this.handleError));
+  }
+
+  getAllwithAuth() {
+    return this.http.get(this.url + '/ver', {headers: this.header})
   }
 
   get(id: number) {
@@ -27,26 +39,26 @@ export class DataService {
             catchError(this.handleError));
   }
 
-  getByUser(id:number) {
-    return this.http.get(this.url + '/findByUser?id=' + id)
+  getByUsuario(usuario:string) {
+    return this.http.get(this.url + '/buscarBy?usuario=' + usuario)
         .pipe(map(response => response),
             catchError(this.handleError));
   }
 
   create(resource:any) {
-    return this.http.post(this.url + '/new', resource)
+    return this.http.post(this.url + '/new', resource, {headers: this.header})
                   .pipe(map(response => response),
                       catchError(this.handleError));
   }
 
   update(resource:any, id: number) {
-    return this.http.patch(this.url + '/edit?id=' + id, resource)
+    return this.http.patch(this.url + '/edit?id=' + id, resource, {headers: this.header})
               .pipe(map(response => response),
                 catchError(this.handleError));
   }
 
   delete(id:number) {
-    return this.http.delete(this.url + '/delete?id=' + id)
+    return this.http.delete(this.url + '/delete?id=' + id, {headers: this.header})
                 .pipe(map(response => response), 
                     catchError(this.handleError));
   }

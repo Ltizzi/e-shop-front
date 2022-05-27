@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { CompraService } from './../../services/compra.service';
 import { Router } from '@angular/router';
 import { ShopOrderService } from './../../services/shop-order.service';
@@ -19,10 +20,11 @@ export class CheckOutComponent implements OnInit {
 
   constructor(private orderServ: ShopOrderService,
               private compraServ: CompraService,
-              private router: Router) { }
+              private router: Router,
+              private authServ: AuthService) { }
 
   ngOnInit(): void {
-    this.orderServ.getAll().subscribe(data => {
+    this.orderServ.getByUsuario((this.authServ.currentUser).sub).subscribe(data => {
                             this.orders = data;
                             });
 
