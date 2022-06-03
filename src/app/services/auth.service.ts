@@ -26,7 +26,7 @@ export class AuthService {
   login(credentials:any): Observable<any> {
       const body = new HttpParams({fromObject: credentials});
       const options = { headers: this.headers};
-      return this.http.post('http://localhost:8080/api/login', body.toString(), options)
+      return this.http.post('https://ltizzi-e-shop.herokuapp.com/api/login', body.toString(), options)
           .pipe(map((data:any) => {
             if (data) {
               sessionStorage.setItem('token', JSON.stringify(data));

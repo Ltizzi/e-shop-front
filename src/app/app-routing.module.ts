@@ -1,3 +1,4 @@
+import { ProductoComponent } from './components/producto/producto.component';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { EditEntradaComponent } from './admin/forms/edit-entrada/edit-entrada.component';
 import { EditCategoryComponent } from './admin/forms/edit-category/edit-category.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'categorias', component: CategoriasComponent},
     { path: 'productos', component: ProductosComponent },
+    { path: 'producto', component: ProductoComponent },
     { path: 'shop-cart', component: ShopCartComponent },
     { path: 'check-out', component: CheckOutComponent },
     { path: 'order-success', component: OrderSucessComponent },

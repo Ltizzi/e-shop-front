@@ -1,0 +1,21 @@
+<div class="container-fluid" *ngIf="load">
+    <header>
+        <h4 class="prod-header">{{producto.nombre}}</h4>
+    </header>
+    <div class="row">
+        <div class="col-sm-4">
+            <img class="img-fluid" src="{{producto.img_url_1}}" alt="foto del producto">
+        </div>
+
+        <div class="col-sm-8">
+            <ul>
+                <li>Marca: {{producto.marca}}</li>
+                <li>Categoría: {{producto.tipo.nombre}}</li>
+                <li>Descripción: {{producto.about}}</li>
+                <li>Stock: {{stock.cantidad}}</li>
+            </ul>
+            <button class="btn btn-success" (click)="addToCart(producto.producto_id)">Agregar al carrito</button>
+        </div>
+    </div>
+
+</div>

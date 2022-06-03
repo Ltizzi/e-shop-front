@@ -9,6 +9,6 @@ import { Injectable } from '@angular/core';
 export class CarritoService extends DataService{
 
   constructor(http: HttpClient, authServ: AuthService) {
-    super("http://localhost:8080/cart", http, authServ)
+    super("https://ltizzi-e-shop.herokuapp.com/cart", http, authServ)
   }
 }

@@ -32,4 +32,9 @@ export class ProductCardComponent implements OnInit {
     this.router.navigate(['/shop-cart'])
    }
 
+  viewProduct(prod_id:number){
+    this.datoServ.cambiarDato(prod_id);
+    this.router.navigate(['/producto'])
+  }
+
 }

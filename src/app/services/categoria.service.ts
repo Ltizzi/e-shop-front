@@ -9,6 +9,6 @@ import { DataService } from './data.service';
 export class CategoriaService extends DataService{
 
   constructor(http: HttpClient, authServ: AuthService) {
-    super("http://localhost:8080/tipo", http, authServ);
+    super("https://ltizzi-e-shop.herokuapp.com/tipo", http, authServ);
    }
 }

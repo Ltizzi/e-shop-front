@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class UsuarioService extends DataService{
 
   constructor(http: HttpClient, authServ: AuthService) {
-    super("http://localhost:8080/user", http, authServ);
+    super("https://ltizzi-e-shop.herokuapp.com/user", http, authServ);
    }
   
   

@@ -3,7 +3,7 @@
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" *ngFor="let prod of productos" >
-        <img class="d-block w-100" src="{{prod.img_url_1}}" alt="First slide">
+        <img class="d-block w-100 img-fluid" src="{{prod.img_url_1}}" alt="First slide">
         <h3 class="text-white text-center">{{prod.nombre}}</h3>
         <h5 class="text-white text-center">{{prod.precio}}</h5>
       </div>

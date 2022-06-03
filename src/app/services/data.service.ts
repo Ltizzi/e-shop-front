@@ -45,6 +45,12 @@ export class DataService {
             catchError(this.handleError));
   }
 
+  addRolToUser(usuario:string) {
+    return this.http.post(this.url + '/addtouser?usuario=' + usuario, usuario)
+        .pipe(map(response => response),
+            catchError(this.handleError));
+  }
+
   create(resource:any) {
     return this.http.post(this.url + '/new', resource, {headers: this.header})
                   .pipe(map(response => response),

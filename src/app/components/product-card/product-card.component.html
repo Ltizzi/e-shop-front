@@ -5,10 +5,17 @@
         <h6 class="card-subtitle">{{prod.precio | currency:'USD': true}}</h6>
 
     </div>
-    <div class="card-footer">
-        
-        <button 
-                (click)="addToCart(prod.producto_id)"                
-                class="btn btn-success btn-block">Añadir al carrito</button>
+    <div class="row card-footer">
+        <div class="col">
+            <button 
+            (click)="addToCart(prod.producto_id)"                
+            class="btn btn-success">Añadir al carrito</button>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary"
+            (click)="viewProduct(prod.producto_id)">Ver Producto</button>
+        </div>
+     
+       
     </div>
 </div>

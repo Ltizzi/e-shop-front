@@ -1,3 +1,4 @@
+import { DatosService } from './../../services/datos.service';
 import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -15,15 +16,18 @@ export class LoginComponent implements OnInit {
     contraseña: new FormControl('')
   })
 
-  constructor(private authServ: AuthService, private router: Router) { }
+  constructor(private authServ: AuthService, 
+              private router: Router, 
+              private datoServ: DatosService) { }
 
   ngOnInit(): void {
+    localStorage.clear();
   }
 
   onSubmit(){
     let data = this.login.value;
     this.authServ.login(data).subscribe(() =>{
-                        
+                       
   
                         this.router.navigate(['/']);
 

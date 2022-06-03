@@ -17,7 +17,7 @@ export class ShopOrderService extends DataService{
 // url:string = "http://localhost:8080/order";
 
 constructor(http: HttpClient, authServ: AuthService) {
-  super("http://localhost:8080/order", http, authServ);
+  super("https://ltizzi-e-shop.herokuapp.com/order", http, authServ);
  }
 
 

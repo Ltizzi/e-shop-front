@@ -1,3 +1,4 @@
+import { UsuarioService } from './../../services/usuario.service';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { ProductoService } from './../../services/producto.service';
@@ -30,6 +31,8 @@ export class ShopCartComponent implements OnInit {
   prodXAgregar: any;
   cargado: boolean = false;
 
+  user: any;
+
   old_cart: any;
 
 
@@ -38,6 +41,7 @@ export class ShopCartComponent implements OnInit {
               private prodServ: ProductoService,
               private orderServ: ShopOrderService,
               private authServ: AuthService,
+              private userServ: UsuarioService,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -54,6 +58,7 @@ export class ShopCartComponent implements OnInit {
     else if ((localStorage.getItem("pxa_temp" )&& (this.prod_id == 0))) {
       this.prodXAgregar = localStorage.getItem("pxa_temp");
     }
+    this.userServ.getByUsuario((this.authServ.currentUser).sub).subscribe(data => this.user = data)
     this.cartServ.getByUsuario((this.authServ.currentUser).sub).subscribe( data => {
                   this.carritos = data;
                   for(let cart of this.carritos) {
@@ -73,7 +78,8 @@ export class ShopCartComponent implements OnInit {
   crearCarrito(id: number) {
     let data = this.carrito.value;
     data.producto.producto_id = this.prodXAgregar.producto_id;
-    data.user.user_id = 1; //harcoded
+    data.user.user_id = this.user.user_id;
+    console.log("la id del usuario dueño del carrito es" + data.user.user_id);
     this.cartServ.create(data).subscribe(() => {
       localStorage.clear();
       this.datoServ.cambiarDato(0);

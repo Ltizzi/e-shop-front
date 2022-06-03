@@ -9,6 +9,6 @@ import { DataService } from './data.service';
 export class EntradaService extends DataService{
 
   constructor(http: HttpClient, authServ: AuthService) {
-    super("http://localhost:8080/ingreso", http, authServ);
+    super("https://ltizzi-e-shop.herokuapp.com/ingreso", http, authServ);
    }
 }

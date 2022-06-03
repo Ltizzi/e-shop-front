@@ -47,6 +47,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { SiginComponent } from './components/sigin/sigin.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { SiginComponent } from './components/sigin/sigin.component';
     NewEntradaComponent,
     EditEntradaComponent,
     ProductCardComponent,
-    SiginComponent
+    SiginComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
