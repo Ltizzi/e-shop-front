@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
     this.catServ.getAll().subscribe((data) => (this.categorias = data));
     if (this.logged) {
       this.usuario = this.authServ.currentUser;
+
       this.userServ
         .getByUsuario(this.usuario.sub)
         .subscribe((data) => (this.user = data));
@@ -54,19 +55,12 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     this.authServ.logout();
+    this.logged = false;
     this.ngOnInit();
     this.router.navigate(['/']);
   }
 
-  // contarItems() {
-  //   this.cartServ
-  //     .getByUsuario(this.authServ.currentUser.sub)
-  //     .subscribe((data) => {
-  //       this.carritos = data;
-  //       if (this.carritos.length > 0) {
-  //         this.cantidadItems = this.carritos.length;
-  //         console.log(this.carritos.length);
-  //       } else this.cantidadItems = 0;
-  //     });
-  // }
+  getUser() {
+    return this.authServ.currentUser.sub;
+  }
 }

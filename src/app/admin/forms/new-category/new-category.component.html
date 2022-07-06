@@ -1,13 +1,15 @@
-<form [formGroup]="tipo" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" 
-                type="text" 
-                class="form-control" 
-                formControlName="nombre">
-    </div>
-   
+<app-control></app-control>
 
-   <button class="btn btn-primary">Submit</button>
-  
-</form>  
+<form [formGroup]="tipo" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input
+      id="nombre"
+      type="text"
+      class="form-control"
+      formControlName="nombre"
+    />
+  </div>
+
+  <button class="btn btn-primary">Submit</button>
+</form>

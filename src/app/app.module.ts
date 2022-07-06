@@ -17,7 +17,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { popper } from '@popperjs/core';
 
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -49,7 +48,7 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
-
+import { CarouselProdComponent } from './components/producto/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +79,8 @@ import { CarouselComponent } from './components/home/carousel/carousel.component
     ProductCardComponent,
     SiginComponent,
     ProductoComponent,
-    CarouselComponent
+    CarouselComponent,
+    CarouselProdComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,23 +88,23 @@ import { CarouselComponent } from './components/home/carousel/carousel.component
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
-    DataTablesModule
-   ],
-  providers: [ {provide: ErrorHandler, useClass: AppErrorHandler},
-        DataService,
-        CarritoService,
-        CategoriaService,
-        CompraService,
-        EntradaService,
-        ProductoService,
-        StockService,
-        UsuarioService,
-        ShopOrderService,
-        { provide: JWT_OPTIONS, useValue: JWT_OPTIONS},
-        JwtHelperService,
-        AuthService
-  
+    DataTablesModule,
   ],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    DataService,
+    CarritoService,
+    CategoriaService,
+    CompraService,
+    EntradaService,
+    ProductoService,
+    StockService,
+    UsuarioService,
+    ShopOrderService,
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+    AuthService,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

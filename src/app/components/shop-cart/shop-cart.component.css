@@ -55,14 +55,18 @@
 
 .btn {
   color: var(--white);
+  width: 90%;
 }
 
 .btn-del {
   background: var(--english-red);
+  width: 45%;
 }
 
 .btn-add {
+  margin-left: 1rem;
   background: var(--bone);
+  width: 45%;
 }
 
 .btn-nxt {
@@ -105,4 +109,6 @@ thead {
 
 .cart-empty {
   color: var(--bone);
+  text-align: center;
+  padding-top: 2rem;
 }

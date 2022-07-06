@@ -1,0 +1,22 @@
+<ngb-carousel class="producto__carousel">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="prod.img_url_1" alt="" class="carousel-img" />
+    </div>
+  </ng-template>
+  <ng-template ngbSlide *ngIf="prod.img_url_2">
+    <div class="picsum-img-wrapper">
+      <img [src]="prod.img_url_2" alt="" class="carousel-img" />
+    </div>
+  </ng-template>
+  <ng-template ngbSlide *ngIf="prod.img_url_3">
+    <div class="picsum-img-wrapper">
+      <img [src]="prod.img_url_3" alt="" class="carousel-img" />
+    </div>
+  </ng-template>
+  <ng-template ngbSlide *ngIf="prod.img_url_4">
+    <div class="picsum-img-wrapper">
+      <img [src]="prod.img_url_4" alt="" class="carousel-img" />
+    </div>
+  </ng-template>
+</ngb-carousel>

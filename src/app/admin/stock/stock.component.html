@@ -1,46 +1,47 @@
+<app-control></app-control>
 <div class="container-fluid stock">
+  <h1>Stock</h1>
 
-    <h1>Stock</h1>
-
-    <!-- <p>
+  <!-- <p>
         <input
             #query
             (keyup)="filter(query.value)"
             type="text" class="form-control" placeholder="Buscar...">
     </p> -->
 
-   
-
-    <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table row-border hover">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Marca</th>
-                <th>Categoría</th>
-                <th>Cantidad</th>
-                <th>Controles</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let stock of stockFiltrado">
-                <td>{{stock.stock_id}}</td>
-                <td>{{stock.producto_id.nombre}}</td>
-                <td>{{stock.producto_id.marca}}</td>
-                <td>{{stock.producto_id.tipo.nombre}}</td>
-                <td>{{stock.cantidad}}</td>
-                <td>
-                    <button class="btn btn-danger">
-                        X
-                    </button>
-                    <button class="btn btn-warning" (click)="edit(stock.producto_id.producto_id)">
-                        Edit
-                    </button>
-                </td>
-
-            </tr>
-        </tbody>
-    </table>
-
+  <table
+    datatable
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+    class="table row-border hover"
+  >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Categoría</th>
+        <th>Cantidad</th>
+        <th>Controles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stock of stockFiltrado">
+        <td>{{ stock.stock_id }}</td>
+        <td>{{ stock.producto_id.nombre }}</td>
+        <td>{{ stock.producto_id.marca }}</td>
+        <td>{{ stock.producto_id.tipo.nombre }}</td>
+        <td>{{ stock.cantidad }}</td>
+        <td>
+          <button class="btn btn-danger">X</button>
+          <button
+            class="btn btn-warning"
+            (click)="edit(stock.producto_id.producto_id)"
+          >
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-

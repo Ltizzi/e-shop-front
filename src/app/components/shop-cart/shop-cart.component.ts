@@ -29,10 +29,9 @@ export class ShopCartComponent implements OnInit {
   carritos: any = [];
   prodXAgregar: any;
   cartgado: boolean = false;
-
   user: any;
-
   old_cart: any;
+  logToBuy: boolean = false;
 
   constructor(
     private cartServ: CarritoService,
@@ -46,9 +45,11 @@ export class ShopCartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //recupera la id del producto
     this.datoServ.dataPosta.subscribe((data) => (this.prod_id = data));
     console.log(this.prod_id);
 
+    //con la id del producto, recupera la data de la DB
     if (this.prod_id != 0) {
       this.prodServ.get(this.prod_id).subscribe((data) => {
         console.log(data);
@@ -57,40 +58,53 @@ export class ShopCartComponent implements OnInit {
         localStorage.setItem('pxa_temp', JSON.stringify(data));
       });
     } else if (localStorage.getItem('pxa_temp') && this.prod_id == 0) {
-      this.prodXAgregar = localStorage.getItem('pxa_temp');
+      this.prodXAgregar = localStorage.getItem('pxa_temp'); //para usuarios anonimos
     }
-    this.userServ
-      .getByUsuario(this.authServ.currentUser.sub)
-      .subscribe((data) => (this.user = data));
-    this.cartServ
-      .getByUsuario(this.authServ.currentUser.sub)
-      .subscribe((data) => {
-        this.carritos = data;
+    if (this.isLogged()) {
+      this.userServ
+        .getByUsuario(this.authServ.currentUser.sub) //recupera data del usuario para el POST
+        .subscribe((data) => (this.user = data));
+      this.cartServ
+        .getByUsuario(this.authServ.currentUser.sub) //recupera carts del usuario
+        .subscribe((data) => {
+          this.carritos = data;
 
-        for (let cart of this.carritos) {
-          cart.cant_edit = false;
-        }
-        if (!data) {
-          this.carritos = localStorage.getItem('carritos_temp');
-        } else {
+          for (let cart of this.carritos) {
+            cart.cant_edit = false;
+          }
+          // if (!data) {
+          //   this.carritos = localStorage.getItem('carritos_temp');
+          // } else {
           localStorage.setItem('carritos_temp', JSON.stringify(data));
-        }
-        this.dato.contarItemsOnCart(this.carritos.length);
-      });
+          // }
+          this.dato.contarItemsOnCart(this.carritos.length); //para la pastilla de la nav
+        });
+    } else {
+      this.carritos = JSON.parse(localStorage.getItem('carritos_temp') || '[]'); //usuarios anonimos
+    }
   }
 
   crearCarrito(id: number) {
     let data = this.carrito.value;
     data.producto.producto_id = this.prodXAgregar.producto_id;
-    data.user.user_id = this.user.user_id;
+
     console.log('la id del usuario dueño del carrito es' + data.user.user_id);
-    this.cartServ.create(data).subscribe(() => {
-      localStorage.clear();
-      this.datoServ.cambiarDato(0);
-      this.prodXAgregar = {};
-      this.cartgado = false;
-      this.ngOnInit();
-    });
+    if (this.isLogged()) {
+      //si el usuario está logueado, crea el carrito
+      data.user.user_id = this.user.user_id;
+      this.cartServ.create(data).subscribe(() => {
+        localStorage.clear();
+        this.datoServ.cambiarDato(0);
+        this.prodXAgregar = {};
+        this.cartgado = false;
+        this.ngOnInit();
+      });
+    } else {
+      //sino sale el cartel para loguearse
+      this.carritos.push(data);
+      this.logToBuy = true;
+      this.cargado();
+    }
   }
 
   borrarDelStorage() {
@@ -154,6 +168,7 @@ export class ShopCartComponent implements OnInit {
   }
 
   siguiente() {
+    //crea las ordenes de compra a partir de los carritos
     for (let carrito of this.carritos) {
       console.log('EL carrito que se subirá es: ' + carrito);
       this.orderServ
@@ -171,5 +186,9 @@ export class ShopCartComponent implements OnInit {
     if (this.carritos.length > 0) return false;
     // else if (this.carritos) return false;
     else return true;
+  }
+
+  isLogged() {
+    return this.authServ.isLoggedIn();
   }
 }

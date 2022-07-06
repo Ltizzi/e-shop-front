@@ -1,5 +1,3 @@
-import { Usuario } from './../models/usuario';
-import { UsuarioService } from './usuario.service';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 

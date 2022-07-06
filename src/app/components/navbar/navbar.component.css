@@ -26,12 +26,23 @@
   text-decoration: none;
 }
 
+.nav-item {
+  padding-top: 0.2rem;
+}
+
+.nav-icon {
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+}
+
 .dropdown {
   margin-left: 5rem;
 }
 
-.dropdown-toggle {
-  cursor: pointer;
+.dropdown-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 1px var(--bone);
 }
 
 .dropdown-item:hover {
@@ -42,6 +53,8 @@
 .dropdown-menu {
   background-color: var(--charcoal);
   box-shadow: 1px 1px var(--bone);
+  position: relative;
+  margin-left: -4rem;
 }
 
 .dropdown-txt {
@@ -56,7 +69,8 @@
   text-align: center;
   background: var(--bone);
   position: relative;
-  bottom: 1ex;
+  margin-left: 5px;
+  bottom: 2ex;
 }
 
 /* .busca {

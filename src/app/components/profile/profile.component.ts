@@ -5,23 +5,26 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  user: any;
+  load: boolean = false;
 
-  user:any;
-  load:boolean = false;
-
-  constructor(private userServ: UsuarioService, private authServ: AuthService) { }
+  constructor(
+    private userServ: UsuarioService,
+    private authServ: AuthService
+  ) {}
 
   ngOnInit(): void {
-   if (this.authServ.isLoggedIn()) {
-      this.userServ.getByUsuario((this.authServ.currentUser).sub)
-                      .subscribe(data => {
-                            this.user = data;
-                            this.load = true;
-                            });
-   }
+    if (this.authServ.isLoggedIn()) {
+      this.userServ
+        .getByUsuario(this.authServ.currentUser.sub)
+        .subscribe((data) => {
+          this.user = data;
+          this.load = true;
+          console.log(this.user);
+        });
+    }
   }
-
 }

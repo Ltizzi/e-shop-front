@@ -1,4 +1,9 @@
-.carousel{
-    width: 1000px;
-    margin: 0 auto;
+.home__title {
+  text-align: center;
+  text-shadow: 2px 2px 2px var(--cambridge-blue);
+}
+
+.carousel {
+  width: 1000px;
+  margin: 0 auto;
 }

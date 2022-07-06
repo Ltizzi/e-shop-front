@@ -1,37 +1,43 @@
+<app-control></app-control>
+
 <div class="container-fluid">
-    <div class="selector" *ngIf="!editor">
-        <h3>Seleccione la categoría que quiere Editar</h3>
-        <form [formGroup]="id" (ngSubmit)="callEditor()">
-            <select name="categorias" id="categorias" class="form-control" formControlName="id">
-                <option value="{{cat.tipo_prod_id}}" 
-                *ngFor="let cat of categorias"
-                class="form-control">{{cat.nombre}}
-                </option>
-            </select>
-               
-            <button class="btn btn-success">Elegir</button>
-        </form>
-        
-        
-    </div>
+  <div class="selector" *ngIf="!editor">
+    <h3>Seleccione la categoría que quiere Editar</h3>
+    <form [formGroup]="id" (ngSubmit)="callEditor()">
+      <select
+        name="categorias"
+        id="categorias"
+        class="form-control"
+        formControlName="id"
+      >
+        <option
+          value="{{ cat.tipo_prod_id }}"
+          *ngFor="let cat of categorias"
+          class="form-control"
+        >
+          {{ cat.nombre }}
+        </option>
+      </select>
 
-    <div class="editor" *ngIf="editor">
-        <h3>Edite el nombre de la categoria {{categoria.nombre}}</h3>
-        <form [formGroup]="tipo" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input id="nombre" 
-                        type="text" 
-                        class="form-control" 
-                        formControlName="nombre"
-                        placeholder="{{categoria.nombre}}">
-            </div>
-           
-        
-           <button class="btn btn-primary">Submit</button>
-          
-        </form>  
+      <button class="btn btn-success">Elegir</button>
+    </form>
+  </div>
 
-    </div>
-    
+  <div class="editor" *ngIf="editor">
+    <h3>Edite el nombre de la categoria {{ categoria.nombre }}</h3>
+    <form [formGroup]="tipo" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="{{ categoria.nombre }}"
+        />
+      </div>
+
+      <button class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 </div>

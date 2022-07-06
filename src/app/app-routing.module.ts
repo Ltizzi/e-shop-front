@@ -25,35 +25,34 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'categorias', component: CategoriasComponent},
-    { path: 'productos', component: ProductosComponent },
-    { path: 'producto', component: ProductoComponent },
-    { path: 'shop-cart', component: ShopCartComponent },
-    { path: 'check-out', component: CheckOutComponent },
-    { path: 'order-success', component: OrderSucessComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signin', component: SiginComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'mis-compras', component: MisComprasComponent},
-    { path: 'not-found', component: NotFoundComponent },
-    { path: 'admin/control', component: ControlComponent },
-    { path: 'admin/ingresos', component: IngresosComponent },
-    { path: 'admin/stock', component: StockComponent },
-    { path: 'admin/ventas', component: VentasComponent },
-    { path: 'admin/usuarios', component: UsuariosComponent},
-    { path: 'admin/producto/new', component: NewProductComponent },
-    { path: 'admin/producto/edit', component: EditProductComponent },
-    { path: 'admin/entrada/new', component: NewEntradaComponent },
-    { path: 'admin/entrada/edit', component: EditEntradaComponent },
-    { path: 'admin/categoria/new', component: NewCategoryComponent},
-    { path: 'admin/categoria/edit', component: EditCategoryComponent }
-
-
+  { path: '', component: HomeComponent },
+  { path: 'categorias', component: CategoriasComponent },
+  { path: 'productos', component: ProductosComponent },
+  { path: 'producto', component: ProductoComponent },
+  { path: 'shop-cart', component: ShopCartComponent },
+  { path: 'check-out', component: CheckOutComponent },
+  { path: 'order-success', component: OrderSucessComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SiginComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'mis-compras', component: MisComprasComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'admin/control', component: ControlComponent },
+  { path: 'admin/ingresos', component: IngresosComponent },
+  { path: 'admin/stock', component: StockComponent },
+  { path: 'admin/ventas', component: VentasComponent },
+  { path: 'admin/usuarios', component: UsuariosComponent },
+  { path: 'admin/producto/new', component: NewProductComponent },
+  { path: 'admin/producto/edit', component: EditProductComponent },
+  { path: 'admin/entrada/new', component: NewEntradaComponent },
+  { path: 'admin/entrada/edit', component: EditEntradaComponent },
+  { path: 'admin/categoria/new', component: NewCategoryComponent },
+  { path: 'admin/categoria/edit', component: EditCategoryComponent },
+  { path: 'admin/categoria/list', component: CategoriasComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

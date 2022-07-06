@@ -1,18 +1,27 @@
+<app-control></app-control>
+
 <form [formGroup]="entrada" (ngSubmit)="onSubmit()">
-    <div class="form-group" formGroupName="producto_id">
-        <select name="producto_id" id="producto_id" formControlName="producto_id">
-            <!-- <option  selected>Elija el producto</option> -->
-            <option value="{{producto.producto_id}}" *ngFor="let producto of productos">{{producto.nombre}}</option>
-        </select>
-    </div>
+  <div class="form-group" formGroupName="producto_id">
+    <select name="producto_id" id="producto_id" formControlName="producto_id">
+      <!-- <option  selected>Elija el producto</option> -->
+      <option
+        value="{{ producto.producto_id }}"
+        *ngFor="let producto of productos"
+      >
+        {{ producto.nombre }}
+      </option>
+    </select>
+  </div>
 
-    <div class="form-group">
-        <label for="cantidad">Cantidad</label>
-        <input id="cantidad" type="number" class="form-control" formControlName="cantidad">
-    </div>
-   
+  <div class="form-group">
+    <label for="cantidad">Cantidad</label>
+    <input
+      id="cantidad"
+      type="number"
+      class="form-control"
+      formControlName="cantidad"
+    />
+  </div>
 
-   <button class="btn btn-primary">Submit</button>
-  
-</form>  
-
+  <button class="btn btn-primary">Submit</button>
+</form>

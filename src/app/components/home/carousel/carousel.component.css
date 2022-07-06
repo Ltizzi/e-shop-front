@@ -10,6 +10,11 @@
   justify-content: center;
 }
 
+.carousel-link {
+  color: var(--white);
+  text-decoration: none;
+}
+
 .carousel-img {
   width: 40rem;
   height: 30rem;

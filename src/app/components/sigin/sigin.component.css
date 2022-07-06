@@ -1,0 +1,29 @@
+.registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+.form-group {
+  padding: 1rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.form-control {
+  padding: 1rem;
+}
+
+.btn-next {
+  background: var(--charcoal);
+  color: var(--white);
+  font-weight: 500;
+  width: 10rem;
+}

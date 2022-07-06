@@ -1,34 +1,41 @@
-<h3 style="text-align: center;">Compra</h3>
-<h4>Lista de Productos:</h4>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Cantidad</th>
-      <th>Total a pagar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngFor="let order of orders">
-      <tr *ngIf="order.estado.estado_id == 1">
-        <td>{{order.producto.nombre}}</td>
-        <td>{{order.cantidad}}</td>
-        <td>{{order.total_gastado}}</td>
+<section class="checkout">
+  <h3 class="checkout__title">Confirmación de Compra</h3>
+  <h4 class="checkout__subtitle">Lista de Productos:</h4>
+  <table class="checkout__table table">
+    <thead>
+      <tr>
+        <th class="checkout__table-title">Producto</th>
+        <th class="checkout__table-title">Cantidad</th>
+        <th class="checkout__table-title">Total a pagar</th>
       </tr>
-    </ng-container>
-    
-  </tbody>
-  <tfoot>
-    <tr>
-      <td></td>
-      <td></td>
-      <th>Total: ${{calcularTotal()}}</th>
-    </tr>
-  </tfoot>
-</table>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let order of orders">
+        <tr *ngIf="order.estado.estado_id == 1" class="checkout__table-row">
+          <td class="checkout__table-data">{{ order.producto.nombre }}</td>
+          <td class="checkout__table-data">{{ order.cantidad }}</td>
+          <td class="checkout__table-data">{{ order.total_gastado }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <th class="checkout__total">Total: ${{ calcularTotal() }}</th>
+      </tr>
+    </tfoot>
+  </table>
 
-<div>
-  <h6>Método de pago</h6>
-  <p>Los pagos se efectuan a través de Mercado Pago, presione el siguiente botón para continuar el pago en su sitio</p>
-  <button class="btn btn-success" (click)="siguiente()">Continuar a Mercado Pago</button>
-</div>
+  <div class="checkout__bajada">
+    <h6 class="checkout__bajada-title">Método de pago</h6>
+    <p class="checkout__bajada-txt">
+      Los pagos se efectuan a través de Mercado Pago, presione el siguiente
+      botón para continuar el pago en su sitio
+    </p>
+    <button class="btn btn-next" (click)="siguiente()">
+      Continuar a Mercado Pago
+      <i class="fa-solid fa-money-check-dollar"></i>
+    </button>
+  </div>
+</section>

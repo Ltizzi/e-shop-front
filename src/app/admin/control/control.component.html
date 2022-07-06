@@ -1,26 +1,42 @@
-<div class="container-fluid row">
-    <div class="col-sm-2">
-        <a routerLink="/admin/producto/new" class="btn btn-primary">Nuevo Producto</a>
-    </div>
-    <div class="col-sm-2">
-        <a  routerLink="/admin/categoria/new" class="btn btn-primary">Nueva Categoría</a>
-        <a routerLink="/admin/categoria/edit" class="btn btn-primary">Editar Categoría</a>
-    </div>
-    <div class="col-sm-2">
-        <a routerLink="/admin/entrada/new" class="btn btn-primary">Nuevo Ingreso</a>
-    </div>
-    <div class="col-sm-2">
-        <a routerLink="/admin/ingresos" class="btn btn-primary">Ingresos</a>
-    </div>
-    <div class="col-sm-2">
-        <a routerLink="/admin/usuarios" class="btn btn-primary">Usuarios</a>
-    </div>
-    <div class="col-sm-2">
-        <a routerLink="/admin/ventas" class="btn btn-primary">Ventas</a>
-    </div>
+<div class="container-fluid control">
+  <div class="control__container">
+    <h5 class="control__subtitle">Productos</h5>
+    <a routerLink="/admin/stock" class="btn btn-go"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></a>
+    <a routerLink="/admin/producto/new" class="btn btn-add"
+      ><i class="fa-solid fa-file"></i
+    ></a>
+  </div>
+  <div class="control__container">
+    <h5 class="control__subtitle">Categorias</h5>
+    <a routerLink="/admin/categoria/new" class="btn btn-add"
+      ><i class="fa-solid fa-file"></i
+    ></a>
+    <a routerLink="/admin/categoria/edit" class="btn btn-edit"
+      ><i class="fa-solid fa-pen-to-square"></i
+    ></a>
+  </div>
 
+  <div class="control__container">
+    <h5 class="control__subtitle">Ingresos</h5>
+    <a routerLink="/admin/ingresos" class="btn btn-go"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></a>
+    <a routerLink="/admin/entrada/new" class="btn btn-add"
+      ><i class="fa-solid fa-file"></i
+    ></a>
+  </div>
+  <div class="control__container">
+    <h5 class="control__subtitle">Usuarios</h5>
+    <a routerLink="/admin/usuarios" class="btn btn-go"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></a>
+  </div>
+  <div class="control__container">
+    <h5 class="control__subtitle">Ventas</h5>
+    <a routerLink="/admin/ventas" class="btn btn-go"
+      ><i class="fa-solid fa-magnifying-glass"></i
+    ></a>
+  </div>
 </div>
-
-<app-stock></app-stock>
-
-

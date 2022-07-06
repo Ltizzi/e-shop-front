@@ -39,7 +39,10 @@
   </div>
 </div>
 
-<div class="container-fluid fondo-tabla-cart" *ngIf="this.carritos != 0">
+<div
+  class="container-fluid fondo-tabla-cart"
+  *ngIf="this.carritos != 0 && !this.logToBuy"
+>
   <h3 class="cart-title">Carrito</h3>
   <div class="table-out">
     <table class="table">
@@ -111,7 +114,10 @@
             </h4>
           </td>
           <td>
-            <button class="btn btn-nxt" (click)="siguiente()">Siguiente</button>
+            <button class="btn btn-nxt" (click)="siguiente()">
+              Siguiente
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
           </td>
         </tr>
       </tfoot>
@@ -120,5 +126,9 @@
 </div>
 
 <div *ngIf="cargado()">
-  <h4 class="cart-empty">El carrito está vacío!</h4>
+  <h4 class="cart-empty">¡El carrito está vacío!</h4>
+</div>
+
+<div *ngIf="logToBuy">
+  <h4 class="cart-empty">Tiene que loguear para añadir items al carrito</h4>
 </div>

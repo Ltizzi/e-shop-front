@@ -1,66 +1,115 @@
+<app-control></app-control>
+
 <form [formGroup]="producto" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" type="text" class="form-control" formControlName="nombre" placeholder="{{produ.nombre}}">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input
+      id="nombre"
+      type="text"
+      class="form-control"
+      formControlName="nombre"
+      placeholder="{{ produ.nombre }}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="marca">Marca</label>
+    <input
+      id="marca"
+      type="text"
+      class="form-control"
+      formControlName="marca"
+      placeholder="{{ produ.marca }}"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="precio">Precio</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+      </div>
+      <input
+        id="precio"
+        type="number"
+        class="form-control"
+        formControlName="precio"
+        placeholder="{{ produ.precio }}"
+      />
     </div>
-    <div class="form-group">
-       <label for="marca">Marca</label>
-       <input id="marca" type="text" class="form-control" formControlName="marca" placeholder="{{produ.marca}}">
-   </div>
+  </div>
 
-   <div class="form-group">
-        <label for="precio">Precio</label>
-        <div class="input-group">
-            <div class="input-group-prepend">
-                 <span class="input-group-text">$</span>
-            </div>
-            <input id="precio" type="number" class="form-control" formControlName="precio" placeholder="{{produ.precio}}">
-       
-           
-        </div>
-   </div>
-   
-    <div class="form-group" formGroupName="tipo">
-        <label for="tipo">Categoría</label>
-        <select name="tipo" id="tipo_prod_id" class="form-control" formControlName="tipo_prod_id">
-            
-            <option *ngFor="let cat of categoria" value="{{cat.tipo_prod_id}}">{{cat.nombre}}</option>
-        </select>
-    </div>
+  <div class="form-group" formGroupName="tipo">
+    <label for="tipo">Categoría</label>
+    <select
+      name="tipo"
+      id="tipo_prod_id"
+      class="form-control"
+      formControlName="tipo_prod_id"
+    >
+      <option *ngFor="let cat of categoria" value="{{ cat.tipo_prod_id }}">
+        {{ cat.nombre }}
+      </option>
+    </select>
+  </div>
 
-    <div class="form-group">
-        <label for="img_url_1">Foto 1</label>
-        <input id="img_url_1" type="text" class="form-control" formControlName="img_url_1" placeholder="{{produ.img_url_1}}">
-    </div>
+  <div class="form-group">
+    <label for="img_url_1">Foto 1</label>
+    <input
+      id="img_url_1"
+      type="text"
+      class="form-control"
+      formControlName="img_url_1"
+      placeholder="{{ produ.img_url_1 }}"
+    />
+  </div>
 
-    <div class="form-group">
-        <label for="img_url_2">Foto 2</label>
-        <input id="img_url_2" type="text" class="form-control" formControlName="img_url_2" placeholder="{{produ.img_url_2}}">
-    </div>
+  <div class="form-group">
+    <label for="img_url_2">Foto 2</label>
+    <input
+      id="img_url_2"
+      type="text"
+      class="form-control"
+      formControlName="img_url_2"
+      placeholder="{{ produ.img_url_2 }}"
+    />
+  </div>
 
-    <div class="form-group">
-        <label for="img_url_3">Foto 3</label>
-        <input id="img_url_3" type="text" class="form-control" formControlName="img_url_3" placeholder="{{produ.img_url_3}}">
-    </div>
+  <div class="form-group">
+    <label for="img_url_3">Foto 3</label>
+    <input
+      id="img_url_3"
+      type="text"
+      class="form-control"
+      formControlName="img_url_3"
+      placeholder="{{ produ.img_url_3 }}"
+    />
+  </div>
 
-    <div class="form-group">
-        <label for="img_url_4">Foto 4</label>
-        <input id="img_url_4" type="text" class="form-control" formControlName="img_url_4" placeholder="{{produ.img_url_4}}">
-    </div>
+  <div class="form-group">
+    <label for="img_url_4">Foto 4</label>
+    <input
+      id="img_url_4"
+      type="text"
+      class="form-control"
+      formControlName="img_url_4"
+      placeholder="{{ produ.img_url_4 }}"
+    />
+  </div>
 
+  <div class="form-group">
+    <label for="about">Descripcion</label>
+    <textarea
+      id="about"
+      cols="15"
+      rows="5"
+      class="form-control"
+      formControlName="about"
+      placeholder="{{ produ.about }}"
+    >
+    </textarea>
+  </div>
 
+  <button class="btn btn-primary">Submit</button>
 
-   <div class="form-group">
-       <label for="about">Descripcion</label>
-       <textarea id="about"   cols="15" rows="5" class="form-control" formControlName="about" placeholder="{{produ.about}}">
-       </textarea>
-       
-   </div>
-
-   <button class="btn btn-primary">Submit</button>
-
-   <p>{{ producto.value | json }}</p>
-  
-</form>  
-
-
+  <p>{{ producto.value | json }}</p>
+</form>

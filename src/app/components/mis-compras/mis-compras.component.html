@@ -1,23 +1,26 @@
-<h1>Mis compras</h1>
-<table class="table">
+<section class="compras">
+  <h1 class="compras-title">Mis compras</h1>
+  <table class="table compras__tabla">
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Items</th>
-            <th>Monto</th>
-            <th>Fecha</th>
-        </tr>
-        <tr *ngFor="let compra of compras">
-            <th>{{compra.compra_id}}</th>
-            <th>
-                <ul>
-                    <li *ngFor="let item of compra.items">
-                        Producto: {{item.producto.nombre}}, precio: {{item.producto.precio}}
-                    </li>
-                </ul>
-            </th>
-            <th>{{compra.monto}}</th>
-            <th>{{compra.fecha}}</th>
-        </tr>
+      <tr class="compras__tabla-title">
+        <th>Id</th>
+        <th>Items</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+      </tr>
+      <tr *ngFor="let compra of compras" class="compras__tabla-info">
+        <td>{{ compra.compra_id }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let item of compra.items" class="compras__tabla-list">
+              Producto: {{ item.producto.nombre }}, precio:
+              {{ item.producto.precio }}
+            </li>
+          </ul>
+        </td>
+        <td>{{ compra.monto }}</td>
+        <td>{{ compra.fecha }}</td>
+      </tr>
     </thead>
-</table>
+  </table>
+</section>

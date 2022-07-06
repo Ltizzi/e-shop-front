@@ -1,3 +1,37 @@
-.row {
-    display: flex;
+.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  vertical-align: top;
+  position: sticky;
+}
+
+.control__subtitle {
+  text-align: center;
+}
+
+.control__container {
+  display: flex;
+  flex-direction: column;
+  vertical-align: top;
+}
+
+.btn {
+  width: 6rem;
+  box-shadow: 1px 1px 2px var(--cambridge-blue);
+  color: var(--white);
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.btn-go {
+  background: var(--cambridge-blue);
+}
+
+.btn-add {
+  background: var(--english-red);
+}
+
+.btn-edit {
+  background: var(--bone);
 }

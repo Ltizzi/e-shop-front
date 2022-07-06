@@ -14,7 +14,7 @@ export class ProductoComponent implements OnInit {
   prod_id: any;
   producto: any;
   load: boolean = false;
-  local_data: any;
+  stockLoaded: boolean = false;
 
   constructor(
     private prodServ: ProductoService,
@@ -26,13 +26,7 @@ export class ProductoComponent implements OnInit {
   ngOnInit(): void {
     this.datoServ.dataPosta.subscribe((data) => {
       this.prod_id = data;
-      if (this.prod_id) localStorage.setItem('producto_id', this.prod_id);
     });
-
-    if (!this.prod_id) {
-      this.local_data = localStorage.getItem('producto_id');
-      this.prod_id = this.local_data;
-    }
 
     this.prodServ.get(parseInt(this.prod_id)).subscribe((data) => {
       this.producto = data;
@@ -41,6 +35,7 @@ export class ProductoComponent implements OnInit {
         for (let stock of data) {
           if (stock.producto_id.producto_id === this.prod_id) {
             this.stock = stock;
+            this.stockLoaded = true;
           }
         }
       });
