@@ -1,3 +1,8 @@
-.sticky-top{
-    top:60px
+.sticky-top {
+  top: 60px;
+}
+
+.list-group-item.active {
+  background: var(--english-red);
+  border-color: var(--english-red);
 }

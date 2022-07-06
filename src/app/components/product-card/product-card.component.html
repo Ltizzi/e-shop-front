@@ -1,21 +1,23 @@
-<div class="card" style="width: 15rem">
-    <img class="card-img-top" src="{{prod.img_url_1}}" alt="{{ prod.nombre }}">
-    <div class="card-body">
-        <h5 class="card-title">{{prod.nombre}}</h5>
-        <h6 class="card-subtitle">{{prod.precio | currency:'USD': true}}</h6>
-
+<div class="card">
+  <img
+    class="card-img-top"
+    src="{{ prod.img_url_1 }}"
+    alt="{{ prod.nombre }}"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ prod.nombre }}</h5>
+    <h6 class="card-subtitle">{{ prod.precio | currency: "USD":true }}</h6>
+  </div>
+  <div class="row card-footer">
+    <div class="col">
+      <button (click)="addToCart(prod.producto_id)" class="btn btn-add">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
     </div>
-    <div class="row card-footer">
-        <div class="col">
-            <button 
-            (click)="addToCart(prod.producto_id)"                
-            class="btn btn-success">Añadir al carrito</button>
-        </div>
-        <div class="col">
-            <button class="btn btn-primary"
-            (click)="viewProduct(prod.producto_id)">Ver Producto</button>
-        </div>
-     
-       
+    <div class="col">
+      <button class="btn btn-ver" (click)="viewProduct(prod.producto_id)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
     </div>
+  </div>
 </div>

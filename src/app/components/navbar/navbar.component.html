@@ -1,42 +1,82 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-    <a class="navbar-brand mx-1" routerLink="/">E-shop</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <ul class="navbar-nav nav-ul">
-      <li  class="nav-item ms-5">
-        <a  class="nav-link catalogo" routerLink="/productos">Catálogo</a>  
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+  <a class="nav-title" routerLink="/">E-shop</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav nav-ul">
+    <li class="nav-item ms-5">
+      <a class="nav-txt catalogo" routerLink="/productos">Catálogo</a>
+    </li>
+  </ul>
+
+  <div
+    class="collapse navbar-collapse justify-content-end"
+    id="navbarsExampleDefault"
+  >
+    <ul class="navbar-nav nav-ul justify-content-end">
+      <li class="nav-item">
+        <a class="nav-txt" routerLink="/shop-cart">Carrito </a>
+        <span class="badge pilula"> {{ cantidadItems }} </span>
+      </li>
+
+      <li ngbDropdown class="nav-item dropdown" *ngIf="isLogIn()">
+        <a
+          ngbDropdownToggle
+          class="dropdown-toggle nav-txt"
+          id="dropdown01"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Opciones</a
+        >
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item dropdown-txt" routerLink="/profile">Perfil</a>
+          <a class="dropdown-item dropdown-txt" routerLink="/mis-compras"
+            >Compras</a
+          >
+          <a
+            class="dropdown-item dropdown-txt"
+            routerLink="/admin/control"
+            *ngIf="isAdmin()"
+            >Admin Control</a
+          >
+          <button
+            class="dropdown-item btn btn-danger dropdown-txt"
+            (click)="logout()"
+          >
+            Logout
+          </button>
+        </div>
+      </li>
+      <li ngbDropdown class="nav-item dropdown" *ngIf="!isLogIn()">
+        <a
+          ngbDropdownToggle
+          class="nav-link dropdown-toggle dropdown-txt"
+          id="dropdown01"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          >Ingrese</a
+        >
+        <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item dropdown-txt" routerLink="/login">Loguear</a>
+          <a class="dropdown-item dropdown-txt" routerLink="/signin"
+            >Registrar</a
+          >
+        </div>
       </li>
     </ul>
-   
-  
-    <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-      <ul class="navbar-nav nav-ul justify-content-end">
-   
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/shop-cart">Carrito</a>
-        </li>
-      
-        <li ngbDropdown class="nav-item dropdown" *ngIf="isLogIn()">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opciones</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" routerLink="/profile" >Perfil</a>
-            <a class="dropdown-item" routerLink="/mis-compras">Compras</a>
-            <a class="dropdown-item" routerLink="/admin/control" *ngIf="isAdmin()">Admin Control</a>
-            <button class="dropdown-item btn btn-danger" (click)="logout()">Logout</button>
-          </div>
-        </li>
-        <li ngbDropdown class="nav-item dropdown" *ngIf="!isLogIn()">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingrese</a>
-          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" routerLink="/login">Loguear</a>
-            <a class="dropdown-item" routerLink="/signin">Registrar</a>
-          </div>
-        </li>
-      </ul>
-      <!-- <form class="busca">
+    <!-- <form class="busca">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form> -->
-    </div>
-  </nav>
+  </div>
+</nav>

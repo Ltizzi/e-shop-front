@@ -1,0 +1,28 @@
+.carousel {
+  background: var(--bone);
+  padding: 1rem 0;
+  width: 100%;
+  box-shadow: 3px 3px var(--cambridge-blue);
+}
+
+.picsum-img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-img {
+  width: 40rem;
+  height: 30rem;
+
+  background-color: var(--bone);
+}
+
+.carousel-caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  background: var(--charcoal);
+  opacity: 0.9;
+}

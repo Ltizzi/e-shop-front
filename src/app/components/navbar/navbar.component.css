@@ -1,13 +1,62 @@
-.nav-ul{
-    margin-right: 4rem;
+.navbar {
+  background: var(--charcoal);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.dropdown{
-    margin-left: 5rem;
+.nav-title {
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: wavy;
+  text-shadow: 1px 1px 1px var(--bone);
+  margin-left: 0.5rem;
+}
+
+.nav-ul {
+  margin-right: 4rem;
+}
+
+.nav-txt {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px var(--bone);
+  text-decoration: none;
+}
+
+.dropdown {
+  margin-left: 5rem;
 }
 
 .dropdown-toggle {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  color: var(--white);
+  background: var(--bone);
+}
+
+.dropdown-menu {
+  background-color: var(--charcoal);
+  box-shadow: 1px 1px var(--bone);
+}
+
+.dropdown-txt {
+  color: var(--white);
+  font-weight: 500;
+  text-shadow: 1px 1px 1px var(--bone);
+}
+
+.pilula {
+  border-radius: 50%;
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  background: var(--bone);
+  position: relative;
+  bottom: 1ex;
 }
 
 /* .busca {

@@ -1,0 +1,43 @@
+<ngb-carousel *ngIf="images" class="carousel-fondo">
+  <ng-template ngbSlide *ngFor="let img of images">
+    <div class="picsum-img-wrapper">
+      <img
+        [src]="img.img_url_1"
+        class="carousel-img"
+        alt="Random first slide"
+      />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ img.nombre }}</h3>
+      <p>{{ img.tipo.nombre }} - u$s{{ img.precio }}</p>
+    </div>
+  </ng-template>
+
+  <!-- <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" class="carousel-img" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ nombres[2] }}</h3>
+      <p>{{ precios[2] }}</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[3]" class="carousel-img" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ nombres[3] }}</h3>
+      <p>{{ precios[3] }}</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[4]" class="carousel-img" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ nombres[4] }}</h3>
+      <p>{{ precios[4] }}</p>
+    </div>
+  </ng-template> -->
+</ngb-carousel>

@@ -1,8 +1,47 @@
-.card{
-    margin-bottom: 30px;
+.card {
+  margin-bottom: 30px;
+  color: var(--bone);
+  text-align: center;
+  background-color: #f8f5f5;
+  border: 1px solid var(--english-red);
+  border-radius: 20px;
+  width: 20rem;
+  height: 25rem;
+  padding: 1rem;
+  box-shadow: 2px 5px 5px var(--cambridge-blue);
 }
 
-.card-footer{
-    padding:0;
+.card-img-top {
+  margin: 0 auto;
+  width: 80%;
+  max-height: 55%;
+}
 
+.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.card-subtitle {
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.card-footer {
+  padding: 0;
+}
+
+.btn-add {
+  background: var(--charcoal);
+  color: var(--white);
+  font-weight: 700;
+  width: 100%;
+}
+
+.btn-ver {
+  background: var(--bone);
+  color: var(--white);
+  font-weight: 700;
+  width: 100%;
 }

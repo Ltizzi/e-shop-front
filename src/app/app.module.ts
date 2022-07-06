@@ -48,6 +48,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { ProductoComponent } from './components/producto/producto.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { ProductoComponent } from './components/producto/producto.component';
     EditEntradaComponent,
     ProductCardComponent,
     SiginComponent,
-    ProductoComponent
+    ProductoComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

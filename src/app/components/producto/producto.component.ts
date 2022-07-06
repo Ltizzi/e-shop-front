@@ -7,40 +7,49 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.component.html',
-  styleUrls: ['./producto.component.css']
+  styleUrls: ['./producto.component.css'],
 })
 export class ProductoComponent implements OnInit {
-
   stock: any;
   prod_id: any;
   producto: any;
   load: boolean = false;
+  local_data: any;
 
-  constructor(private prodServ: ProductoService,
-              private stockServ: StockService,
-              private datoServ: DatosService,
-              private router: Router) { }
+  constructor(
+    private prodServ: ProductoService,
+    private stockServ: StockService,
+    private datoServ: DatosService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.datoServ.dataPosta.subscribe(data => this.prod_id = data);
-    this.prodServ.get(parseInt(this.prod_id)).subscribe(data => 
-                {this.producto = data;
-                this.stockServ.getAll().subscribe((data:any) => {
-                            for(let stock of data){
-                              if (stock.producto_id.producto_id === this.prod_id) {
-                                this.stock = stock;
-                              }
-                            this.load = true;
-                            }});
-                });
+    this.datoServ.dataPosta.subscribe((data) => {
+      this.prod_id = data;
+      if (this.prod_id) localStorage.setItem('producto_id', this.prod_id);
+    });
+
+    if (!this.prod_id) {
+      this.local_data = localStorage.getItem('producto_id');
+      this.prod_id = this.local_data;
+    }
+
+    this.prodServ.get(parseInt(this.prod_id)).subscribe((data) => {
+      this.producto = data;
+      this.load = true;
+      this.stockServ.getAll().subscribe((data: any) => {
+        for (let stock of data) {
+          if (stock.producto_id.producto_id === this.prod_id) {
+            this.stock = stock;
+          }
+        }
+      });
+    });
   }
 
-
-  addToCart(prod_id:number) {
+  addToCart(prod_id: number) {
     this.datoServ.cambiarDato(prod_id);
     console.log(prod_id);
-    this.router.navigate(['/shop-cart'])
-   }
- 
-
+    this.router.navigate(['/shop-cart']);
+  }
 }

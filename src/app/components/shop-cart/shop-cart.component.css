@@ -1,52 +1,108 @@
+.cart-bg {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  padding: 1rem;
+  color: var(--bone);
+}
+
 /* Add to cart */
 
-.addRow{
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    border: 3px;
-    border-style: solid;
-    border-color: slategrey;
-    padding: 10px 20px;
-    border-radius: 20px;
+.add-to-title {
+  color: var(--bone);
+  text-align: center;
 }
 
-.add-col{
-    margin-top: 30px;
-    border-style: solid;
-    border-color: slategrey;
-    border: 3px;
+.addRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px;
+  border-style: solid;
+  border-color: slategrey;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 90%;
 }
 
-.addToCart{
-    display: inline-flex;
-
+.add-col {
+  border-style: solid;
+  border-color: slategrey;
+  border: 3px;
 }
 
-.addP{
-    margin-left: 10px;
+.addToCart {
+  display: flex;
+  flex-direction: row;
 }
 
-.addI{
-    margin-left: 10px;
+.addP {
+  margin-left: 10px;
 }
 
-.addB{
-    margin-left: 10px;
+.addI {
+  margin-left: 10px;
 }
 
+.addB {
+  margin-left: 10px;
+}
+
+.btn {
+  color: var(--white);
+}
+
+.btn-del {
+  background: var(--english-red);
+}
+
+.btn-add {
+  background: var(--bone);
+}
+
+.btn-nxt {
+  background: var(--charcoal);
+}
 
 /* Tabla Carrito */
-.table{
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+.fondo-tabla-cart {
+  width: 80%;
 }
 
-thead{
-    text-align: center;
+.cart-title {
+  text-align: center;
+  color: var(--bone);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px var(--cambridge-blue);
 }
 
-.table-body{
-    text-align: center;
+.table-out {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 1rem 0;
+}
+
+.table {
+  background: var(--white);
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+thead {
+  text-align: center;
+}
+
+.table-body {
+  text-align: center;
+}
+
+.cart-empty {
+  color: var(--bone);
 }
