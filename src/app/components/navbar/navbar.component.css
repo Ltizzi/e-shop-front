@@ -14,10 +14,6 @@
   margin-left: 2rem;
 }
 
-.catologo {
-  margin-left: -60rem;
-}
-
 .nav-txt {
   color: var(--white);
   font-size: 1.1rem;
@@ -25,6 +21,11 @@
   text-shadow: 1px 1px 1px var(--bone);
   text-decoration: none;
   margin-left: -5rem;
+}
+
+.catalogo {
+  margin-top: 1rem;
+  margin-left: 2rem;
 }
 
 .nav-item {
@@ -88,6 +89,7 @@
 
   .nav-title {
     margin-left: 0rem;
+    margin-right: 2rem;
   }
 
   .nav-ul {
