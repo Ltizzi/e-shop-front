@@ -7,13 +7,14 @@
 .home__bajada {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
-.carousel {
-  width: 100%;
+.home__carousel {
+  width: 60vw;
   /* margin: 0 auto; */
 }
 
 .home__bajada-lateral {
-  width: 22.2rem;
+  width: 20vw;
 }
