@@ -55,7 +55,7 @@
   background-color: var(--charcoal);
   box-shadow: 1px 1px var(--bone);
   position: relative;
-  margin-left: -4rem;
+  margin-left: -10rem;
 }
 
 .dropdown-txt {
