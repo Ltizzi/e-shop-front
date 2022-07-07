@@ -67,12 +67,18 @@ body {
 .btn-borrar {
   background: var(--charcoal);
   width: 3rem;
+  transition: 0.5s;
 }
 
 .btn-editar {
   margin-left: 1rem;
   background: var(--bone);
   width: 3rem;
+  transition: 0.5s;
+}
+
+.btn-editar:hover {
+  border: 3px 3px 3px var(--cambridge-blue);
 }
 
 /* Forms */

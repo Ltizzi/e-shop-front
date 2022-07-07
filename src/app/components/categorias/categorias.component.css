@@ -7,6 +7,17 @@
   border-color: var(--english-red);
 }
 
+.list-group-item {
+  transition: 0.3s;
+}
+
+.list-group-item:hover {
+  background: var(--english-red);
+  color: var(--white);
+  font-weight: 500;
+  border: 3px solid var(--cambridge-blue);
+}
+
 @media (max-width: 768px) {
   .sticky-top {
     top: 100px;

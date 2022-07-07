@@ -25,6 +25,7 @@
           placeholder="Elija"
           style="width: 60px"
           class="addI"
+          min="1"
         />
         <button class="btn btn-add addB">
           <i class="fa-solid fa-check"></i>
@@ -85,6 +86,7 @@
                 style="width: 50px"
                 placeholder="{{ cart.cantidad }}"
                 formControlName="cantidad"
+                min="1"
               />
               <button class="btn btn-success">OK</button>
             </form>

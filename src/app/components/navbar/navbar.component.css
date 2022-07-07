@@ -12,6 +12,12 @@
   text-decoration: wavy;
   text-shadow: 1px 1px 1px var(--bone);
   margin-left: 2rem;
+  transition: 0.5s;
+}
+
+.nav-title:hover {
+  text-shadow: 3px 3px 3px var(--white);
+  font-size: 1.5rem;
 }
 
 .nav-txt {
@@ -26,6 +32,12 @@
 .catalogo {
   margin-top: 1rem;
   margin-left: 2rem;
+  transition: 0.5s;
+}
+
+.catalogo:hover {
+  text-shadow: 3px 3px 3px 3px var(--white);
+  font-size: 1.2rem;
 }
 
 .nav-item {
@@ -35,6 +47,11 @@
 .nav-icon {
   margin-top: 0.4rem;
   font-size: 1.2rem;
+  transition: 0.5s;
+}
+
+.nav-icon:hover {
+  font-size: 1.5rem;
 }
 
 .dropdown {
@@ -45,6 +62,11 @@
   color: var(--white);
   font-size: 1.5rem;
   text-shadow: 1px 1px 1px var(--bone);
+  transition: 0.5s;
+}
+
+.dropdown-item {
+  transition: 0.5s;
 }
 
 .dropdown-item:hover {

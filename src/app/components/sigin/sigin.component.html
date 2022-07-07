@@ -24,6 +24,35 @@
       />
     </div>
 
+    <div
+      *ngIf="
+        login.controls['usuario'].invalid &&
+        (login.controls['usuario'].dirty || login.controls['usuario'].touched)
+      "
+      class="alert alert-danger"
+    >
+      <div *ngIf="login.controls['usuario'].errors?.['required']">
+        El usuario es requerido
+      </div>
+      <div *ngIf="login.controls['usuario'].errors?.['minlength']">
+        El usuario tiene que tener un mínimo de 4 y un máximo de 12 caracteres
+      </div>
+    </div>
+    <div
+      *ngIf="
+        login.controls['password'].invalid &&
+        (login.controls['password'].dirty || login.controls['password'].touched)
+      "
+      class="alert alert-danger"
+    >
+      <div *ngIf="login.controls['password'].errors?.['required']">
+        El usuario es requerido
+      </div>
+      <div *ngIf="login.controls['password'].errors?.['minlength']">
+        El usuario tiene que tener un mínimo de 6 y máximo de 12 caracteres
+      </div>
+    </div>
+
     <button type="submit" class="btn btn-next">Submit</button>
   </form>
 </section>

@@ -29,4 +29,10 @@
 .footer__social-icon {
   font-size: 3rem;
   margin-left: 0.5rem;
+  transition: 0.3s;
+}
+
+.footer__social-icon:hover {
+  transform: rotate(5deg);
+  color: var(--white);
 }

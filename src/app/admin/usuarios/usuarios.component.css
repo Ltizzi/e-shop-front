@@ -10,3 +10,12 @@
 .tabla {
   margin-bottom: 2rem;
 }
+
+.btn {
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: rotate(5deg);
+  color: var(--white);
+}

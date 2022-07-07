@@ -12,6 +12,11 @@
 .carousel-link {
   color: var(--white);
   text-decoration: none;
+  transition: 0.5s;
+}
+
+.carousel-link:hover {
+  text-shadow: 3px 3px 3px var(--white);
 }
 
 .carousel-img {

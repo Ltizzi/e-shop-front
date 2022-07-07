@@ -4,7 +4,7 @@ import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
 import { ProductoService } from './../../services/producto.service';
 import { DatosService } from './../../services/datos.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CarritoService } from './../../services/carrito.service';
 import { Component, OnInit } from '@angular/core';
 import { ShopOrderService } from 'src/app/services/shop-order.service';
@@ -16,7 +16,11 @@ import { ShopOrderService } from 'src/app/services/shop-order.service';
 })
 export class ShopCartComponent implements OnInit {
   carrito = new FormGroup({
-    cantidad: new FormControl(),
+    cantidad: new FormControl('', [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(10),
+    ]),
     producto: new FormGroup({
       producto_id: new FormControl(),
     }),

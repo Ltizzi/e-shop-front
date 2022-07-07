@@ -6,6 +6,15 @@
   text-align: center;
 }
 
+.btn {
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: rotate(5deg);
+  color: var(--white);
+}
+
 @media screen and (max-width: 768px) {
   .stock {
     padding: 0;

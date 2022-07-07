@@ -9,8 +9,13 @@
   height: 25rem;
   padding: 1rem;
   box-shadow: 2px 5px 5px var(--cambridge-blue);
+  transition: 0.5s;
 }
 
+.card:hover {
+  transform: scale(1.5rem);
+  border: 5px solid var(--cambridge-blue);
+}
 .card-img-top {
   margin: 0 auto;
   width: 80%;
@@ -44,6 +49,15 @@
   color: var(--white);
   font-weight: 700;
   width: 100%;
+}
+
+.btn {
+  transition: 0.5s;
+}
+
+.btn:hover {
+  transform: scale(1.2rem);
+  border: 5px solid var(--cambridge-blue);
 }
 
 @media (max-width: 768px) {
