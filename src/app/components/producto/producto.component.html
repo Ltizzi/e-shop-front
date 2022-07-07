@@ -1,3 +1,4 @@
+<app-banner></app-banner>
 <div class="container-fluid producto" *ngIf="load">
   <!-- <img
         class="img-fluid producto__img"
@@ -11,11 +12,13 @@
   <div class="producto__info">
     <h4 class="producto__title">{{ producto.nombre }}</h4>
     <ul>
-      <li>Precio: ${{ producto.precio }}</li>
-      <li>Marca: {{ producto.marca }}</li>
-      <li>Categoría: {{ producto.tipo.nombre }}</li>
-      <li>Descripción: {{ producto.about }}</li>
-      <li *ngIf="stockLoaded">Stock: {{ stock.cantidad }}</li>
+      <li class="producto__list">Precio: ${{ producto.precio }}</li>
+      <li class="producto__list">Marca: {{ producto.marca }}</li>
+      <li class="producto__list">Categoría: {{ producto.tipo.nombre }}</li>
+      <li class="producto__list">Descripción: {{ producto.about }}</li>
+      <li *ngIf="stockLoaded" class="producto__list">
+        Stock: {{ stock.cantidad }}
+      </li>
     </ul>
     <button class="btn btn-add" (click)="addToCart(producto.producto_id)">
       <i class="fa-solid fa-cart-shopping"></i>

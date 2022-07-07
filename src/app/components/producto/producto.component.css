@@ -36,6 +36,10 @@
   text-shadow: 1px 1px 1px var(--cambridge-blue);
 }
 
+.producto__list {
+  list-style-type: none;
+}
+
 .btn-add {
   background-color: var(--charcoal);
   margin: 0 auto;

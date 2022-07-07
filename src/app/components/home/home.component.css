@@ -1,9 +1,19 @@
-.home__title {
-  text-align: center;
-  text-shadow: 2px 2px 2px var(--cambridge-blue);
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home__bajada {
+  display: flex;
+  flex-direction: row;
 }
 
 .carousel {
-  width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
+}
+
+.home__bajada-lateral {
+  width: 22.2rem;
 }

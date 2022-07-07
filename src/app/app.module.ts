@@ -49,6 +49,7 @@ import { SiginComponent } from './components/sigin/sigin.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
 import { CarouselProdComponent } from './components/producto/carousel/carousel.component';
+import { BannerComponent } from './components/home/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { CarouselProdComponent } from './components/producto/carousel/carousel.c
     ProductoComponent,
     CarouselComponent,
     CarouselProdComponent,
+    BannerComponent,
   ],
   imports: [
     BrowserModule,
