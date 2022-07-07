@@ -10,65 +10,63 @@ import { Compra } from 'src/app/models/compra';
 @Component({
   selector: 'app-check-out',
   templateUrl: './check-out.component.html',
-  styleUrls: ['./check-out.component.css']
+  styleUrls: ['./check-out.component.css'],
 })
 export class CheckOutComponent implements OnInit {
-
   orders: any = [];
-  compra: Compra = new Compra;
+  compra: Compra = new Compra();
   user: any;
- 
+  loaded: boolean = false;
 
-
-  constructor(private orderServ: ShopOrderService,
-              private compraServ: CompraService,
-              private router: Router,
-              private authServ: AuthService,
-              private userServ: UsuarioService) { }
+  constructor(
+    private orderServ: ShopOrderService,
+    private compraServ: CompraService,
+    private router: Router,
+    private authServ: AuthService,
+    private userServ: UsuarioService
+  ) {}
 
   ngOnInit(): void {
-    this.orderServ.getByUsuario((this.authServ.currentUser).sub).subscribe(data => {
-                            this.orders = data;
-                            });
-    this.userServ.getByUsuario((this.authServ.currentUser).sub).subscribe(data => this.user = data);                      
-
+    this.orderServ
+      .getByUsuario(this.authServ.currentUser.sub)
+      .subscribe((data) => {
+        this.orders = data;
+        this.loaded = true;
+      });
+    this.userServ
+      .getByUsuario(this.authServ.currentUser.sub)
+      .subscribe((data) => {
+        this.user = data;
+      });
   }
 
-  calcularTotal(){
+  calcularTotal() {
     let suma: number = 0;
     for (let order of this.orders) {
-      if (order.estado.estado_id == 1)
-      suma+=order.total_gastado;
+      if (order.estado.estado_id == 1) suma += order.total_gastado;
     }
     return suma;
   }
 
   agregarItems() {
-    let items:any = [];
+    let items: any = [];
     for (let order of this.orders) {
-      if (order.estado.estado_id == 1){
-        
+      if (order.estado.estado_id == 1) {
         items.push(order);
-        
       }
     }
     this.compra.items = items;
     // let items = this.orders.filter( (order:any )=> order.estado.estado_id== 1);
-   
   }
 
-  siguiente(){
+  siguiente() {
     this.agregarItems();
     this.compra.monto = this.calcularTotal();
-    this.compra.user= this.user;
+    this.compra.user = this.user;
     console.log(this.compra);
-   
-    this.compraServ.create(this.compra).subscribe(() =>{
 
+    this.compraServ.create(this.compra).subscribe(() => {
       this.router.navigate(['/order-success']);
-    })
-    
-   
+    });
   }
-
 }

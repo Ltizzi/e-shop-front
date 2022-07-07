@@ -2,7 +2,7 @@
 <section class="checkout">
   <h3 class="checkout__title">Confirmación de Compra</h3>
   <h4 class="checkout__subtitle">Lista de Productos:</h4>
-  <table class="checkout__table table">
+  <table class="checkout__table table" *ngIf="loaded">
     <thead>
       <tr>
         <th class="checkout__table-title">Producto</th>
