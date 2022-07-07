@@ -1,14 +1,14 @@
 <app-control></app-control>
 
 <div class="container-fluid tabla">
-  <h1>Ingresos</h1>
+  <h1 class="meta-tabla">Ingresos</h1>
   <table
     class="table"
     datatable
     [dtOptions]="dtOptions"
     [dtTrigger]="dtTrigger"
   >
-    <thead>
+    <thead class="tabla-title">
       <tr>
         <th>Id</th>
         <th>Nombre</th>
@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let ingreso of ingresos">
+      <tr *ngFor="let ingreso of ingresos" class="tabla-info">
         <td>{{ ingreso.ingreso_id }}</td>
         <td>{{ ingreso.producto_id.nombre }}</td>
         <td>{{ ingreso.producto_id.marca }}</td>
@@ -29,16 +29,17 @@
         <td>{{ ingreso.fecha }}</td>
         <td>
           <button
-            class="btn btn-danger"
+            class="btn btn-borrar"
             (click)="delIngreso(ingreso.ingreso_id)"
           >
-            X
+            <i class="fa-solid fa-xmark"></i>
           </button>
-          <button class="btn btn-warning" (click)="edit(ingreso.ingreso_id)">
-            Edit
+          <button class="btn btn-editar" (click)="edit(ingreso.ingreso_id)">
+            <i class="fa-solid fa-pen-to-square"></i>
           </button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+<app-footer></app-footer>

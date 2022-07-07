@@ -1,11 +1,4 @@
-.tabla{
-    text-align: center;
-    width: 1000px;
-    margin-top: 2em;
-    
-}
-
-.table{
-    width: 1000px;
-    margin: 0 auto;
+.meta-tabla {
+  text-align: center;
+  width: 100%;
 }

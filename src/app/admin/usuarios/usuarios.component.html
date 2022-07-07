@@ -1,7 +1,7 @@
 <app-control></app-control>
-<h1>Usuarios</h1>
-<table class="table">
-  <thead>
+<h1 class="title">Usuarios</h1>
+<table class="table tabla">
+  <thead class="tabla-title">
     <tr>
       <th>Id</th>
       <th>Usuario</th>
@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of usuarios">
+    <tr *ngFor="let user of usuarios" class="tabla-info">
       <td>{{ user.user_id }}</td>
       <td>{{ user.usuario }}</td>
       <td>{{ user.nombre }} {{ user.apellido }}</td>
@@ -23,10 +23,11 @@
         </ul>
       </td>
       <td>
-        <button class="btn btn-success" (click)="hacerAdmin(user.usuario)">
+        <button class="btn btn-admin" (click)="hacerAdmin(user.usuario)">
           Hacer Admin
         </button>
       </td>
     </tr>
   </tbody>
 </table>
+<app-footer></app-footer>

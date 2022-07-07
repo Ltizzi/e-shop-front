@@ -38,3 +38,19 @@
   color: var(--white);
   font-weight: 600;
 }
+
+.btn {
+  color: var(--white);
+  width: 100%;
+}
+
+.btn-borrar {
+  background: var(--charcoal);
+  width: 3rem;
+}
+
+.btn-editar {
+  margin-left: 1rem;
+  background: var(--bone);
+  width: 3rem;
+}

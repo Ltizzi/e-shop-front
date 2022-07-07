@@ -1,0 +1,12 @@
+.btn-admin {
+  background: var(--bone);
+  width: 8rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.tabla {
+  margin-bottom: 2rem;
+}

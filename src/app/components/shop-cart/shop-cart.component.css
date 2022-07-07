@@ -55,18 +55,18 @@
 
 .btn {
   color: var(--white);
-  width: 90%;
+  width: 100%;
 }
 
 .btn-del {
   background: var(--english-red);
-  width: 45%;
+  width: 3rem;
 }
 
 .btn-add {
   margin-left: 1rem;
   background: var(--bone);
-  width: 45%;
+  width: 3rem;
 }
 
 .btn-nxt {

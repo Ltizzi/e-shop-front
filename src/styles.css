@@ -25,3 +25,52 @@ body {
   --charcoal: #d90429;
   --cambridge-blue: #8d99ae;
 }
+
+.tabla {
+  margin: 2rem auto;
+  width: 90%;
+  background: var(--white);
+  color: var(--bone);
+  border-color: var(--cambridge-blue);
+  box-shadow: 3px 3px 5px var(--cambridge-blue);
+}
+
+.tabla-title {
+  background: var(--english-red);
+  color: var(--white);
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 1px var(--bone);
+}
+
+.tabla-info {
+  font-style: italic;
+  font-weight: 500;
+  vertical-align: top;
+}
+
+.tabla-list {
+  text-align: left;
+  list-style-type: none;
+}
+
+.tabla-info:nth-child(odd) {
+  background: var(--cambridge-blue);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.btn {
+  color: var(--white);
+  width: 100%;
+}
+
+.btn-borrar {
+  background: var(--charcoal);
+  width: 3rem;
+}
+
+.btn-editar {
+  margin-left: 1rem;
+  background: var(--bone);
+  width: 3rem;
+}

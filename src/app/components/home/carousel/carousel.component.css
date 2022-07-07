@@ -1,8 +1,7 @@
 .carousel {
   background: var(--bone);
-  padding: 1rem 0;
+  padding: 2rem 0;
   width: 100%;
-  box-shadow: 3px 3px var(--cambridge-blue);
 }
 
 .picsum-img-wrapper {
@@ -17,7 +16,7 @@
 
 .carousel-img {
   width: 40rem;
-  height: 30rem;
+  height: 32rem;
 
   background-color: var(--bone);
 }

@@ -1,9 +1,9 @@
 <app-control></app-control>
-<h1>Ventas</h1>
+<h1 class="title">Ventas</h1>
 
-<table class="table ventas__table">
+<table class="table ventas__table tabla">
   <thead>
-    <tr class="ventas__title">
+    <tr class="ventas__title tabla-title">
       <th>Id</th>
       <th>Productos</th>
       <th>Monto</th>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let venta of ventas" class="ventas__table-info">
+    <tr *ngFor="let venta of ventas" class="tabla-info">
       <td>{{ venta.compra_id }}</td>
       <td>
         <ul>
@@ -33,3 +33,4 @@
     </tr>
   </tbody>
 </table>
+<app-footer></app-footer>

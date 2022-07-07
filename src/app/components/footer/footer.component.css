@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bone);
+  color: var(--white);
+  width: 100%;
+  position: static;
+  bottom: 0;
+}
+
+.footer__img {
+  width: 100%;
+  height: 10vw;
+  object-fit: cover;
+}
+
+.footer__foot {
+  text-align: center;
+}
+
+.footer__social {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer__social-icon {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+}
