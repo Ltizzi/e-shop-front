@@ -1,0 +1,8 @@
+.no {
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+  background: var(--bone);
+  vertical-align: middle;
+  height: 100vw;
+}

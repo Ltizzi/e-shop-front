@@ -51,6 +51,7 @@ import { CarouselComponent } from './components/home/carousel/carousel.component
 import { CarouselProdComponent } from './components/producto/carousel/carousel.component';
 import { BannerComponent } from './components/home/banner/banner.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NoAccessComponent } from './commons/no-access/no-access.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CarouselProdComponent,
     BannerComponent,
     FooterComponent,
+    NoAccessComponent,
   ],
   imports: [
     BrowserModule,

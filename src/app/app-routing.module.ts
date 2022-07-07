@@ -1,3 +1,5 @@
+import { AdminGuard } from './guard/admin.guard';
+import { NoAccessComponent } from './commons/no-access/no-access.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { SiginComponent } from './components/sigin/sigin.component';
 import { EditEntradaComponent } from './admin/forms/edit-entrada/edit-entrada.component';
@@ -37,18 +39,63 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'mis-compras', component: MisComprasComponent },
   { path: 'not-found', component: NotFoundComponent },
-  { path: 'admin/control', component: ControlComponent },
-  { path: 'admin/ingresos', component: IngresosComponent },
-  { path: 'admin/stock', component: StockComponent },
-  { path: 'admin/ventas', component: VentasComponent },
-  { path: 'admin/usuarios', component: UsuariosComponent },
-  { path: 'admin/producto/new', component: NewProductComponent },
-  { path: 'admin/producto/edit', component: EditProductComponent },
-  { path: 'admin/entrada/new', component: NewEntradaComponent },
-  { path: 'admin/entrada/edit', component: EditEntradaComponent },
-  { path: 'admin/categoria/new', component: NewCategoryComponent },
-  { path: 'admin/categoria/edit', component: EditCategoryComponent },
-  { path: 'admin/categoria/list', component: CategoriasComponent },
+  { path: 'no-access', component: NoAccessComponent },
+  {
+    path: 'admin/control',
+    component: ControlComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/ingresos',
+    component: IngresosComponent,
+    canActivate: [AdminGuard],
+  },
+  { path: 'admin/stock', component: StockComponent, canActivate: [AdminGuard] },
+  {
+    path: 'admin/ventas',
+    component: VentasComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/usuarios',
+    component: UsuariosComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/producto/new',
+    component: NewProductComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/producto/edit',
+    component: EditProductComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/entrada/new',
+    component: NewEntradaComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/entrada/edit',
+    component: EditEntradaComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/categoria/new',
+    component: NewCategoryComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/categoria/edit',
+    component: EditCategoryComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'admin/categoria/list',
+    component: CategoriasComponent,
+    canActivate: [AdminGuard],
+  },
 ];
 
 @NgModule({
