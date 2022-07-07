@@ -1,43 +1,45 @@
 <app-control></app-control>
 
-<div class="container-fluid">
-  <div class="selector" *ngIf="!editor">
-    <h3>Seleccione la categoría que quiere Editar</h3>
-    <form [formGroup]="id" (ngSubmit)="callEditor()">
+<div class="container-fluid admin__form">
+  <div class="admin__form-section" *ngIf="!editor">
+    <h3 class="admin__form-title">Seleccione la categoría que quiere Editar</h3>
+    <form [formGroup]="id" (ngSubmit)="callEditor()" class="admin__form-form">
       <select
         name="categorias"
         id="categorias"
-        class="form-control"
+        class="form-control admin__form-select"
         formControlName="id"
       >
         <option
           value="{{ cat.tipo_prod_id }}"
           *ngFor="let cat of categorias"
-          class="form-control"
+          class="form-control admin__form-select-option"
         >
           {{ cat.nombre }}
         </option>
       </select>
 
-      <button class="btn btn-success">Elegir</button>
+      <button class="btn admin__form-btn">Elegir</button>
     </form>
   </div>
 
-  <div class="editor" *ngIf="editor">
-    <h3>Edite el nombre de la categoria {{ categoria.nombre }}</h3>
-    <form [formGroup]="tipo" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="nombre">Nombre</label>
+  <div class="admin__form-editor" *ngIf="editor">
+    <h3 class="admin__form-title">
+      Edite el nombre de la categoria {{ categoria.nombre }}
+    </h3>
+    <form [formGroup]="tipo" (ngSubmit)="onSubmit()" class="admin__form-form">
+      <div class="form-group admin__form-section">
+        <label for="nombre" class="admin__form-label">Nombre</label>
         <input
           id="nombre"
           type="text"
-          class="form-control"
+          class="form-control admin__form-input"
           formControlName="nombre"
           placeholder="{{ categoria.nombre }}"
         />
       </div>
 
-      <button class="btn btn-primary">Submit</button>
+      <button class="btn admin__form-btn">Enviar</button>
     </form>
   </div>
 </div>

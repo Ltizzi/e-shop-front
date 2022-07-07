@@ -1,16 +1,16 @@
 <app-control></app-control>
 
-<form [formGroup]="tipo" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
+<form [formGroup]="tipo" (ngSubmit)="onSubmit()" class="admin__form">
+  <div class="form-group admin__form-section">
+    <label for="nombre" class="admin__form-label">Nombre</label>
     <input
       id="nombre"
       type="text"
-      class="form-control"
+      class="form-control admin__form-input"
       formControlName="nombre"
     />
   </div>
 
-  <button class="btn btn-primary">Submit</button>
+  <button class="btn admin__form-btn">Submit</button>
 </form>
 <app-footer></app-footer>

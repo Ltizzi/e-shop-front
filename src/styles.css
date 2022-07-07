@@ -75,6 +75,66 @@ body {
   width: 3rem;
 }
 
+/* Forms */
+
+.admin__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+  margin: 0 3rem;
+}
+
+.admin__form-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.admin__form-section {
+  text-align: center;
+}
+
+.admin__form-title {
+  text-align: center;
+}
+
+.admin__form-select {
+  width: 20rem;
+  margin: 1rem auto;
+}
+
+.admin__form-select-option {
+  text-align: center;
+}
+
+.admin__form-btn {
+  margin: 1rem auto;
+  background: var(--english-red);
+  width: 5rem;
+}
+
+.admin__form-label {
+  margin-top: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px var(--cambridge-blue);
+}
+
+.admin__form-input {
+  margin: 0 auto;
+  width: 20rem;
+}
+
+.admin__form-textarea {
+  margin: 0 auto;
+}
+
+.admin__form-editor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .tabla {
     width: 100%;

@@ -1,116 +1,105 @@
 <app-control></app-control>
 
-<form [formGroup]="producto" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="nombre">Nombre</label>
-    <input
-      id="nombre"
-      type="text"
-      class="form-control"
-      formControlName="nombre"
-      placeholder="{{ produ.nombre }}"
-    />
-  </div>
-  <div class="form-group">
-    <label for="marca">Marca</label>
-    <input
-      id="marca"
-      type="text"
-      class="form-control"
-      formControlName="marca"
-      placeholder="{{ produ.marca }}"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="precio">Precio</label>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">$</span>
-      </div>
+<form [formGroup]="producto" (ngSubmit)="onSubmit()" class="admin__form">
+  <div class="admin__form-form">
+    <div class="form-group admin__form-section">
+      <label for="nombre" class="admin__form-label">Nombre</label>
       <input
-        id="precio"
-        type="number"
-        class="form-control"
-        formControlName="precio"
-        placeholder="{{ produ.precio }}"
+        id="nombre"
+        type="text"
+        class="form-control admin__form-input"
+        formControlName="nombre"
+        placeholder="{{ produ.nombre }}"
+      />
+      <label for="marca" class="admin__form-label">Marca</label>
+      <input
+        id="marca"
+        type="text"
+        class="form-control admin__form-input"
+        formControlName="marca"
+        placeholder="{{ produ.marca }}"
+      />
+      <label for="precio" class="admin__form-label">Precio</label>
+      <div class="input-group precio-div">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input
+          id="precio"
+          type="number"
+          class="form-control precio"
+          formControlName="precio"
+          placeholder="{{ produ.precio }}"
+        />
+      </div>
+      <div class="form-group admin__form-section" formGroupName="tipo">
+        <label for="tipo admin__form-label">Categoría</label>
+        <select
+          name="tipo"
+          id="tipo_prod_id"
+          class="form-control admin__form-select"
+          formControlName="tipo_prod_id"
+        >
+          <option
+            *ngFor="let cat of categoria"
+            value="{{ cat.tipo_prod_id }}"
+            class="admin__form-option"
+          >
+            {{ cat.nombre }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group admin__form-section">
+      <label for="img_url_1" class="admin__form-label">Foto 1</label>
+      <input
+        id="img_url_1"
+        type="text"
+        class="form-control admin__form-input"
+        formControlName="img_url_1"
+        placeholder="{{ produ.img_url_1 }}"
+      />
+      <label for="img_url_2" class="admin__form-label">Foto 2</label>
+      <input
+        id="img_url_2"
+        type="text"
+        class="form-control admin__form-input"
+        formControlName="img_url_2"
+        placeholder="{{ produ.img_url_2 }}"
+      />
+      <label for="img_url_3" class="admin__form-label">Foto 3</label>
+      <input
+        id="img_url_3"
+        type="text"
+        class="form-control admin__form-input"
+        formControlName="img_url_3"
+        placeholder="{{ produ.img_url_3 }}"
+      />
+      <label for="img_url_4" class="admin__form-label">Foto 4</label>
+      <input
+        id="img_url_4"
+        type="text"
+        class="form-control admin__form-input"
+        formControlName="img_url_4"
+        placeholder="{{ produ.img_url_4 }}"
       />
     </div>
   </div>
 
-  <div class="form-group" formGroupName="tipo">
-    <label for="tipo">Categoría</label>
-    <select
-      name="tipo"
-      id="tipo_prod_id"
-      class="form-control"
-      formControlName="tipo_prod_id"
-    >
-      <option *ngFor="let cat of categoria" value="{{ cat.tipo_prod_id }}">
-        {{ cat.nombre }}
-      </option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="img_url_1">Foto 1</label>
-    <input
-      id="img_url_1"
-      type="text"
-      class="form-control"
-      formControlName="img_url_1"
-      placeholder="{{ produ.img_url_1 }}"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="img_url_2">Foto 2</label>
-    <input
-      id="img_url_2"
-      type="text"
-      class="form-control"
-      formControlName="img_url_2"
-      placeholder="{{ produ.img_url_2 }}"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="img_url_3">Foto 3</label>
-    <input
-      id="img_url_3"
-      type="text"
-      class="form-control"
-      formControlName="img_url_3"
-      placeholder="{{ produ.img_url_3 }}"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="img_url_4">Foto 4</label>
-    <input
-      id="img_url_4"
-      type="text"
-      class="form-control"
-      formControlName="img_url_4"
-      placeholder="{{ produ.img_url_4 }}"
-    />
-  </div>
-
-  <div class="form-group">
-    <label for="about">Descripcion</label>
+  <div class="form-group admin__form-section">
+    <label for="about" class="admin__form-label">Descripcion</label>
     <textarea
       id="about"
       cols="15"
       rows="5"
-      class="form-control"
+      class="form-control admin__form-textarea"
       formControlName="about"
       placeholder="{{ produ.about }}"
     >
     </textarea>
   </div>
 
-  <button class="btn btn-primary">Submit</button>
-
-  <p>{{ producto.value | json }}</p>
+  <button class="btn admin__form-btn">Submit</button>
 </form>
 <app-footer></app-footer>
