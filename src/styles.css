@@ -74,3 +74,29 @@ body {
   background: var(--bone);
   width: 3rem;
 }
+
+@media (max-width: 768px) {
+  .tabla {
+    width: 100%;
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .tabla-title {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    width: 50%;
+  }
+
+  .btn-borrar {
+    font-size: 0.5rem;
+  }
+
+  .btn-editar {
+    font-size: 0.5rem;
+    margin-left: 3rem;
+  }
+}

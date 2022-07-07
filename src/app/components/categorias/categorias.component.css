@@ -6,3 +6,17 @@
   background: var(--english-red);
   border-color: var(--english-red);
 }
+
+@media (max-width: 768px) {
+  .sticky-top {
+    top: 100px;
+  }
+  .list-group {
+    margin-left: -1rem;
+    width: 30vw;
+    font-size: 0.6rem;
+  }
+  .list-group {
+    padding: 3rem 0;
+  }
+}

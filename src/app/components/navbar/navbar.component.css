@@ -11,11 +11,11 @@
   font-weight: 600;
   text-decoration: wavy;
   text-shadow: 1px 1px 1px var(--bone);
-  margin-left: 0.5rem;
+  margin-left: 2rem;
 }
 
-.nav-ul {
-  margin-right: 4rem;
+.catologo {
+  margin-left: -60rem;
 }
 
 .nav-txt {
@@ -24,6 +24,7 @@
   font-weight: 500;
   text-shadow: 1px 1px 1px var(--bone);
   text-decoration: none;
+  margin-left: -5rem;
 }
 
 .nav-item {
@@ -77,3 +78,28 @@
     display: inline-flex;
 
 } */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .nav-title {
+    margin-left: 0rem;
+  }
+
+  .nav-ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-txt {
+    margin-left: 0rem;
+  }
+
+  .dropdown-menu {
+    position: sticky;
+  }
+}

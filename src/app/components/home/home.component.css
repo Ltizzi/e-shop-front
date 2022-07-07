@@ -20,3 +20,16 @@
 .home__bajada-lateral {
   width: 20vw;
 }
+
+@media (max-width: 768px) {
+  .home {
+    margin-top: 4rem;
+  }
+  .home__bajada-lateral {
+    display: none;
+  }
+
+  .home__carousel {
+    width: 100vw;
+  }
+}

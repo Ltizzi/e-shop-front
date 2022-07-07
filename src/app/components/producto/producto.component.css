@@ -48,3 +48,13 @@
   color: var(--white);
   box-shadow: 1px 1px 1px var(--cambridge-blue);
 }
+
+@media (max-width: 768px) {
+  .producto {
+    flex-direction: column;
+  }
+
+  .producto__info {
+    margin-top: 1rem;
+  }
+}

@@ -112,3 +112,29 @@ thead {
   text-align: center;
   padding-top: 2rem;
 }
+
+@media (max-width: 768px) {
+  .addRow {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .add-col {
+    padding: 2rem 0;
+  }
+  .addToCart {
+    flex-direction: column;
+  }
+
+  .fondo-tabla-cart {
+    width: 100%;
+  }
+
+  .table {
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    width: auto;
+  }
+}
